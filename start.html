@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Materialize - Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fontawesome - All CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+    <!-- jQuery - Compiled and minified CSS -->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Firebase JS Reference --> 
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!-- Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Google fonts Open Sans Rubik -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+    <!-- Customized Style CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <title>Landing Page: JB DigiWorks</title>
+      
+    
+      
+  </head>
+    
+  <body data-spy="scroll" data-target="#navScrollspy">
+    
+    <!-- Navigation component -->
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+      <!-- All the navigation bar content goes here -->
+        <a href="#" class="navbar-brand"><i class="fas fa-file-medical-alt mr-2" aria-hidden="true"></i>VMS Visitor Management System</a>
+        <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="myNav">
+            <ul class="navbar-nav" id="navScrollspy">
+              <li class="nav-item"><a href="#section-jumbotron" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#section-description" class="nav-link">Visitors</a></li>
+              <li class="nav-item"><a href="#section-trailer" class="nav-link">History</a></li>
+              <li class="nav-item"><a href="#section-showcase" class="nav-link">Reports</a></li>
+              <li class="nav-item"><a href="#section-features" class="nav-link">Features</a></li>
+              <li class="nav-item"><a href="#section-pricing" class="nav-link">Pricing</a></li>
+              <li class="nav-item"><a href="#section-reviews" class="nav-link">Reviews</a></li>
+            </ul>
+        
+        </div>
+    </nav>
+    
+    <!-- Jumbotron component -->
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+          <h3 class="display-3 display-sm-4 text-light text-uppercase" id="heading">Visitor Management System</h3>
+          <p class="display-4 d-none d-sm-block">The Best Way to Manage Your Visitors</p>
+          <p class="lead">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
+          <p class="lead">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
+          <p><strong>Download now on:</strong></p>
+          <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-app-store mr-2" aria-hidden="true"></i>App Store</a>
+          <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-google-play mr-2" aria-hidden="true"></i>Google Play</a>
+      </div>
+    </section>
+    
+      
+    <div class="container">
+        
+          <!-- Description component -->
+          <section id="section-description" >
+            <h2 class="display-4 text-center">What is VMS?</h2>
+            <p>JB DigiWorks is an innovative digital app for both iOS and Android that lets you recreate the best moments in life either on still photos or video. DigiWorks has many useful features to enhance the photos and videos with editing tools, filters and effects. And when you are done, you can easily share your result with all of your friends and the rest of the world through Instagram and Facebook. </p>
+            <p>JB DigiWorks has been designed from the bottom up by photography experts and award-winning app developers to makesure you get the best digital app ever created. We are continuously improving the app with new features - this is just the beginning.</p>
+          </section>
+        
+          <!-- Trailer component -->
+          <section id="section-trailer">
+            <h2 class="display-4 text-center">JB DigiWorks Trailer</h2>
+            <p class="text-center">Watch our trailer video below to learn how DigiWorks works.</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://youtube.com/embed/Uq5JnknTTK8"></iframe>
+            </div>
+          </section>
+        
+          <!-- Showcase component -->
+          <section id="section-showcase">
+            <h2 class="display-4 text-center">JB DigiWorks in action</h2>
+            <p class="text-center">Examples of how and where you can use JB DigiWorks.</p>
+
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1"></li>
+                        <li data-target="#carousel" data-slide-to="2"></li>
+                        <li data-target="#carousel" data-slide-to="3"></li>
+                      </ol>
+
+                      <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                          <img src="assets/images/at-night.jpg" alt="First slide" class="d-block img-fluid">
+                          <div class="carousel-caption">
+                            <h3 class="display-4">At night</h3>
+                            <p>Use JB DigiWorks at night when going out with friends.</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="assets/images/outside.jpg" alt="Second slide" class="d-block img-fluid">
+                          <div class="carousel-caption">
+                            <h3 class="display-4">Outside</h3>
+                            <p>Use DigiWorks outside when walking in the nature.</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="assets/images/in-the-sun.jpg" alt="Third slide" class="d-block img-fluid">
+                          <div class="carousel-caption">
+                            <h3 class="display-4">In the sun</h3>
+                            <p>Use JB DigiWorks even with strong and direct sun.</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="assets/images/distance.jpg" alt="Fourth slide" class="d-block img-fluid">
+                          <div class="carousel-caption">
+                            <h3 class="display-4">In the distance</h3>
+                            <p>Use JB DigiWorks to take clear photos of objects far away.</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+               </div>
+          </section> 
+        
+          <!-- Features component -->
+          <section id="section-features">
+            <h2 class="display-4 text-center">Features</h2>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-5">
+                    <div class="h1"><i class="fa fa-paint-brush text-info mb-2 " aria-hidden="true"></i></div>
+                    <h3 class="h4 mb-4 text-center">Enhance your photos</h3>
+                    <p>Easily enhance your photos with a selection of editing tools, filters and effects.</p>
+                    <a href="#" class="btn btn-sm btn-info mt-auto">Read more...</a>
+                </div>    
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-5">
+                    <div class="h1"><i class="fa fa-video-camera text-info mb-2 " aria-hidden="true"></i></div>
+                    <h3 class="h4 mb-4 text-center">Also made for video</h3>
+                    <p>With JB DigiWorks you can get dedicated video effects like slow motion, timelapse and transitions.</p>
+                    <a href="#" class="btn btn-sm btn-info mt-auto">Read more...</a>
+                </div>   
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-5">
+                    <div class="h1"><i class="fa fa-instagram text-info mb-2 " aria-hidden="true"></i></div>
+                    <h3 class="h4 mb-4 text-center">Share on Instagram</h3>        
+                    <p>You can easily share your photos with your friends and the rest of the world on Instagram.</p>
+                    <a href="#" class="btn btn-sm btn-info mt-auto">Read more...</a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-5">
+                    <div class="h1"><i class="fa fa-mobile text-info mb-2 " aria-hidden="true"></i></div>
+                    <h3 class="h4 mb-4 text-center">Works on all devices</h3>
+                    <p>DigiWorks works on all platforms and all devices no matter the size of your screen.</p>
+                    <a href="#" class="btn btn-sm btn-info mt-auto">Read more...</a>
+                </div>
+              </div>
+          </section>
+        
+          <!-- Pricing component -->
+          <section id="section-pricing">
+            <h2 class="display-4 text-center">Choose your plan</h2>
+              
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card border-success">
+                         <div class="card-header bg-success text-white text-center">
+                           <h2>Starter</h2>
+                           <h4>Free</h4>
+                         </div>
+                         <div class="card-body">
+                             <div class="card-block">
+                               <p class="card-text">Perfect if you only take pictures for fun.</p>
+                             </div>
+                         </div>
+                         <ul class="list-group small">
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-paint-brush text-info mr-2" aria-hidden="true"></i>Enhance your photos and videos</li>
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-instagram text-info mr-2" aria-hidden="true"></i>Share on Instagram</li>                    
+                         </ul>
+
+                         <div class="card-footer text-center">
+                           <button type="button" class="btn btn-success btn-lg">Select plan</button>
+                         </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card border-warning ">           
+                          <div class="card-header bg-warning text-white text-center">
+                            <h2>Semi-pro</h2>
+                            <h4>$1.99 / month</h4>
+                          </div>
+                          <div class="card-body">
+                             <div class="card-block">
+                               <p class="card-text">Perfect if you're a semi-pro photographer.</p>
+                             </div>
+                         </div>
+                          <ul class="list-group small">
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-paint-brush text-info mr-2" aria-hidden="true"></i>Enhance your photos and videos</li>
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-instagram text-info mr-2 " aria-hidden="true"></i>Share on Instagram</li>
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-cogs text-info mr-2 " aria-hidden="true"></i>Advanced settings</li>
+                          </ul>
+                          <div class="card-footer text-center">
+                            <button type="button" class="btn btn-warning btn-lg">Select plan</button>
+                          </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card border-danger ">          
+                          <div class="card-header bg-danger text-white text-center">
+                            <h2>Pro</h2>
+                            <h4>$4.99 / month</h4>
+                          </div>
+                          <div class="card-body">
+                             <div class="card-block">
+                               <p class="card-text">Perfect if you're a pro photographer.</p>
+                             </div>
+                         </div>
+                          <ul class="list-group small">
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-paint-brush text-info mr-2" aria-hidden="true"></i>Enhance your photos and videos</li>
+                            <li class="list-group-item"><i class="fa fa-fw fa-instagram text-info mr-2 " aria-hidden="true"></i>Share on Instagram</li>
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-cogs text-info mr-2 " aria-hidden="true"></i>Advanced settings</li>
+                            <li class="list-group-item text-center"><i class="fa fa-fw fa-cloud text-info mr-2 " aria-hidden="true"></i>Cloud storage</li>
+                          </ul>
+                          <div class="card-footer text-center">
+                            <button type="button" class="btn btn-danger btn-lg">Select plan</button>
+                          </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+        
+          <!-- Reviews component -->
+          <section id="section-reviews">
+            <h2 class="display-4 text-center">Reviews</h2>
+            <!-- Blockquote with footer -->
+            <div class="row">
+               <div class="col-12 col-md-6 col-xl-3 mb-4">
+                    <blockquote class="blockquote p-3">
+                      <p><i class="fa fa-w fa-quote-left text-secondary" aria-hidden="true"></i>This is the best digital app I've ever tried. I highly recommend DigiWorks!<i class="fa fa-w fa-quote-right text-secondary" aria-hidden="true"></i></p>
+                      <footer class="blockquote-footer">Marc Johnson <time datetime="2017-06-15T14:35">(June 15 2017 14:35)</time></footer>
+                    </blockquote>
+                </div>
+                
+                <div class="col-12 col-md-6 col-xl-3 mb-4">
+                    <blockquote class="blockquote p-3">
+                      <p><i class="fa fa-w fa-quote-left text-secondary" aria-hidden="true"></i>I have never been able to take pictures in the darkness with good results before. Now I can with DigiWorks and I am so happy about that.<i class="fa fa-w fa-quote-right text-secondary" aria-hidden="true"></i></p>
+                      <footer class="blockquote-footer">Hanna Eastwood <time datetime="2017-07-09T19:12">(July 09 2017 19:12)</time></footer>
+                    </blockquote>
+                </div>
+                
+                <div class="col-12 col-md-6 col-xl-3 mb-4">
+                    <blockquote class="blockquote p-3">
+                      <p><i class="fa fa-w fa-quote-left text-secondary" aria-hidden="true"></i>I have tried many different digital apps on the market, but with DigiWorks I am able to use the editing tools, filters and effects that I want in a creative and easy way.<i class="fa fa-w fa-quote-right text-secondary" aria-hidden="true"></i></p>
+                      <footer class="blockquote-footer">Anna Foster <time datetime="2017-09-01T11:19">(September 01 2017 11:19)</time></footer>
+                    </blockquote>
+                </div>
+                
+                <div class="col-12 col-md-6 col-xl-3 mb-4">
+                    <blockquote class="blockquote p-3">
+                      <p><i class="fa fa-w fa-quote-left text-secondary" aria-hidden="true"></i>I use the cloud storage feature of DigiWorks to have a backup of all my photos and videos. I find that feature incredibly valuable.<i class="fa fa-w fa-quote-right text-secondary" aria-hidden="true"></i></p>
+                      <footer class="blockquote-footer">Tim Stevens <time datetime="2017-08-12T08:43">(August 12 2017 8:43)</time></footer>
+                    </blockquote>
+                </div>
+              </div>
+          </section>
+    </div>
+    
+    <section id="section-newsletter" class="bg-secondary ">
+      <div class="container">
+        <form class="py-5 text-white">
+          <h2 class="text-center">Sign-up for our newsletter</h2>
+          <p>Receive our latest news and offers by signing up to our newsletter.</p>
+            <div class="row">
+                <div class="col-12 col-sm-6"> 
+                    <div class="form-group">
+                        <label for="input-name" class="sr-only">Your name:</label>
+                        <input type="text" class="form-control" placeholder="Firstname Lastname" id="input-name">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">  
+                    <div class="form-group">
+                        <label for="input-email" class="sr-only">Your email:</label>
+                        <input type="email" class="form-control" placeholder="email@example.com" id="input-email">
+                    </div>
+                </div>
+            </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="input-terms">
+                        I have read and accept the <a href="#" data-toggle="modal" data-target="#modal">terms and conditions</a>.
+                    </label>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <small class="form-text">You can unsubscribe from the mailing list at any time.</small>
+                    <button type="submit" class="btn btn-dark">Sign up</button>
+                </div>
+            
+        </form>
+          
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Terms and conditions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat, urna ut pharetra ultricies, augue tellus euismod turpis, vitae semper ipsum augue a velit. Pellentesque id finibus velit. Ut sagittis maximus maximus. </p>
+                    <p>In aliquet enim sed turpis mollis ornare. Suspendisse elementum a magna eu luctus. Etiam tincidunt mattis mauris, non lobortis nulla tempor in. </p>
+                    <p>Sed lacinia metus viverra, scelerisque enim sed, sollicitudin magna. Sed non augue sit amet nisl tincidunt ultrices. Praesent nec lacus eget tortor ultricies pulvinar. Praesent euismod ut lorem sit amet bibendum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat, urna ut pharetra ultricies, augue tellus euismod turpis, vitae semper ipsum augue a velit. Pellentesque id finibus velit. Ut sagittis maximus maximus. </p>
+                    <p>In aliquet enim sed turpis mollis ornare. Suspendisse elementum a magna eu luctus. Etiam tincidunt mattis mauris, non lobortis nulla tempor in. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+      
+      
+      
+      
+  
+        
+    <footer class="bg-light">
+        <div class="container py-3 py-sm-5">
+          <div class="row justify-content-center ">
+              <div class="col-12 col-sm-6 col-lg-3">
+                    <h6>Quick links</h6>      
+                    <ul class="list-unstyled ">
+                        <li class="list-unstyled-item"><a href="#" >Home</a></li>
+                        <li class="list-unstyled-item"><a href="#" >What's new?</a></li>
+                        <li class="list-unstyled-item"><a href="#" >Support</a></li>
+                        <li class="list-unstyled-item"><a href="#" >My account</a></li>
+                        <li class="list-unstyled-item"><a href="#" >Unsubscribe</a></li>
+                    </ul>
+               </div>
+              
+               <div class="col-12 col-sm-6 col-lg-3 ">
+                    <h6>Information</h6>      
+                    <ul class="list-unstyled ">
+                        <li class="list-unstyled-item"><a href="#" >About us</a></li>
+                        <li class="list-unstyled-item"><a href="#" >Jobs</a></li>
+                        <li class="list-unstyled-item"><a href="#" >Press info</a></li>
+                        <li class="list-unstyled-item"><a href="#" >Contact</a></li>
+                        <li class="list-unstyled-item"><a href="#" >Partnership</a></li>
+                    </ul>
+               </div>
+              
+               <div class="col-12 col-sm-6 col-lg-3 ">
+                    <h6>Follow us</h6>      
+                    <ul class="list-unstyled ">
+                        <li class="list-unstyled-item"><a href="#" ><i class="fa fa-fw fa-facebook mr-2" aria-hidden="true"></i>Facebook</a></li>
+                        <li class="list-unstyled-item"><a href="#" ><i class="fa fa-fw fa-instagram mr-2" aria-hidden="true"></i>Instagram</a></li>
+                        <li class="list-unstyled-item"><a href="#" ><i class="fa fa-fw fa-twitter mr-2" aria-hidden="true"></i>Twitter</a></li>
+                        <li class="list-unstyled-item"><a href="#" ><i class="fa fa-fw fa-youtube mr-2" aria-hidden="true"></i>YouTube</a></li>
+                        <li class="list-unstyled-item"><a href="#" ><i class="fa fa-fw fa-linkedin mr-2" aria-hidden="true"></i>LinkedIn</a></li>
+                    </ul>
+               </div>
+              
+               <div class="col-12 col-sm-6 col-lg-3 ">
+                    <h6>Our location:</h6>      
+                    <address>
+                        <strong>JB DigiWorks</strong><br>
+                        7000 SW 23rd St<br>
+                        Miami, FL 33155<br>
+                        <i class="fa fa-phone mr-1"></i><a href="tel:+12127363100">(786) 736-3100</a><br>
+                        <i class="fa fa-inbox mr-1"></i><a href="mailto:info@domain.com">info@jbdigiworks.com</a><br>
+                    </address>
+                </div> 
+            </div>
+            
+            <div class="row justify-content-center">
+                
+                <div class="col-12 col-sm-6 col-lg-9">
+                    <ul class="list-inline ">
+                        <li class="list-inline-item">&copy; 2018 JB DigiWorks, Inc.</li>
+                        <li class="list-inline-item">All rights reserved.</li>
+                        <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#modal">Terms of use and privacy policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-sm-6 col-lg-3">
+                   <div class="dropdown dropup">
+                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-language mr-2" aria-hidden="true"></i>Change language</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a href="#" class="dropdown-item small px-1">English</a>
+                            <a href="#" class="dropdown-item small px-1">Spanish</a>
+                            <a href="#" class="dropdown-item small px-1">French</a>
+                            <a href="#" class="dropdown-item small px-1">German</a>
+                        </div>
+                    </div>
+                </div>                              
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/14.2.1/smooth-scroll.min.js" integrity="sha256-MhIEydYjM8X/lfw31uxgXHB5BCo+bQX6BmFJYmzty7w=" crossorigin="anonymous"></script>
+      
+   
+  </body>
+</html>

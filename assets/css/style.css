@@ -1,0 +1,46 @@
+.jumbotron {
+   height: 100%;
+   min-height: 100vh;
+   
+}
+
+/* section {
+    padding-top: 4rem;
+} */
+
+#newsletter {
+    padding-top: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Rubik', sans-serif;
+}
+
+#heading {
+    color: #f7f4f4;
+    /* background: #FFFFFF; */
+    text-shadow: 4px 4px 0px rgb(32, 32, 37), 5px 4px 0px rgba(0,0,0,0.15);
+    color: #f7f4f4;
+    /* background: #FFFFFF; */
+}
+
+#frame {
+    margin-top: 80px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-color: lightseagreen;
+    border-radius: 10px;
+    background-color: lightseagreen
+    
+}
+
+#checkin-btn {
+    width:100%;
+    max-width: 200px;
+}
+
+
