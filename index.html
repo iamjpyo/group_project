@@ -5,13 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+
     <!-- Materialize - Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Fontawesome - All CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    
+    
     <!-- jQuery - Compiled and minified CSS -->  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Firebase JS Reference --> 
@@ -39,90 +43,146 @@
         
     </div>
     
+
     <!-- Jumbotron component -->
     <section id="section-jumbotron" class="jumbotron jumbotron-fluid text-white">
-      <div class="container text-center" id="frame">
-        <div class="row">  
-            <div class="col s12 bg-light text-info m-2 rounded">
-                <form class="card medium col s12">
-                <h3>Please Sign In Here</h3>
-                    <div class="row">
-                      <div class="input-field col s6 ">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                      </div>
-                      <div class="input-field col s6">
-                          <i class="material-icons prefix">person</i>
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                      </div>
+        <div class="container ">
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+                    <!--Grid column-->
+                    <div class="col-md-12 text-center">
+                    <h1 class="display-4 font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInUp text-dark">Please Check In Here</h1>
+                    
+                    <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="row justify-content-center"></div>
+                            <div class="col-12 col-md-4 my-2 mx-2">
+                                <button type="button" class="btn btn-purple btn-lg btn-block rounded" data-toggle="modal" data-target="#modal-signin"><h5>Check In<i class="fas fa-sign-in-alt ml-2"></i></h5></button> 
+                            </div>
+                        </div>
+                        <h5 class="pt-2 pb-2 wow fadeInUp text-info" data-wow-delay="0.2s">It comes
+                                with a lot of new features, easy to follow videos and images. Check it out now!</h5>
+                        <a class="btn btn-outline-purple btn-rounded"><i class="fas fa-book left"></i> Learn more</a>
                     </div>
-                
-                    <div class="row">
-                      <div class="input-field col s6">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="tel" class="validate">
-                        <label for="phone">Phone Number</label>
-                      </div>
-                      <div class="input-field col s6">
-                        <select class="browser-default" id="reason">
-                          <option value="" selected>Reason for your visit</option>
-                          <option value="1">New Patient</option>
-                          <option value="2">Follow Up</option>
-                          <option value="3">Sick Visit</option>
-                        </select>
-                      </div>
                     </div>
-                    <div class="row">
-                      <div class="col s12 center-align">
-                        <button href="#myModal" data-toggle="modal" class="btn waves-effect waves-light teal darken-2 rounded" id="checkin-btn" type="submit" name="action">Check In
-                            <i class="fas fa-user-check right"></i>
-                        </button>
-                      </div>
+                    <!--Grid column-->
+            </div>
+            <!--Grid row-->
+    </section>    
+
+    <!-- Modal -->
+          <div class="modal fade" id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog form-dark" role="document">
+            <!--Content-->
+            <div class="modal-content card card-image" style="background-color: lightslategrey;">
+              <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                <!--Header-->
+                <div class="modal-header text-center pb-4">
+                  <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>SIGN</strong>
+                      <a class="green-text font-weight-bold"><strong>IN</strong></a></h3>
+                  <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <!--Body-->
+                <form>
+                    <div class="modal-body">
+                      <!--Body-->
+                        <div class="row">
+                          
+                            <div class="col-12 col-md-6 md-form mb-5">
+                                <i class="fas fa-user prefix pr-2"></i>
+                                <input type="text" id="first_name" class="form-control validate white-text">
+                                <label class="pl-3" data-error="wrong" data-success="right" for="first_name">First Name</label>
+                            </div>
+                            <div class="col-12 col-md-6 md-form mb-5">
+                                <input type="text" id="last_name" class="form-control validate white-text">
+                                <label class="pl-3" data-error="wrong" data-success="right" for="last_name">Last Name</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-md-6 md-form mb-5">
+                                <i class="fas fa-phone prefix pr-2"></i>
+                                <input type="text" id="phone" class="form-control validate white-text">
+                                <label class="pl-3" data-error="wrong" data-success="right" for="phone">Phone</label>
+                            </div>
+                            <div class="col-12 col-md-6 md-form mb-5">
+                                <select class="browser-default mt-3 bg-light rounded" id="reason">
+                                    <option selected>Reason for your visit</option>
+                                    <option value="1">New Patient</option>
+                                    <option value="2">Follow Up</option>
+                                    <option value="3">Sick Visit</option>
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="form-group mt-4">
+                          <input class="form-check-input" type="checkbox" id="checkbox624">
+                          <label for="checkbox624" class="white-text form-check-label">Accept the<a href="#" class="green-text font-weight-bold">
+                              Terms and Conditions</a></label>
+                        </div>
                     </div>
+
+                    <!--Grid row-->
+                    <div class="row d-flex align-items-center mb-4">
+
+                        <!--Grid column-->
+                        <div class="text-center mb-3 col-md-12">
+                          <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1" id="checkin-btn">Sign In<i class="fas fa-user-plus ml-2"></i></button>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
                 </form>
-        </div>    
-         
-      </div>
-       
-    </section>
-    <div class="row" >
-      <div class="col-sm-6 col-md-6" >
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal fade">
-          <div class="modal-dialog  bg-warning text-dark">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h3 class="modal-title">Thank You!</h3>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                      <p class="lead">You have been successfully signed in.</p>
-                      <p class="text-secondary"><small>Please take a seat and you will be called shortly!</small></p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      
                   </div>
               </div>
+            </div>
+            <!--/.Content-->
           </div>
-        </div>
-      </div>
-    </div>  
-    
-      
-    
+          </div>
+          <!-- Modal -->
+
+
+             <!--Success Modal Templates-->
+            <div id="modal-success" class="modal modal-message modal-success fade "  aria-hidden="true">
+                    <!-- <div class="modal-dialog"> -->
+                        <!-- <div class="modal-content"> -->
+                            <!-- <div class="modal-header" > -->
+                                    <!-- <h4 class="modal-title">Thank You!</h4> -->
+                                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                            <!-- </div> -->
+                            <!-- <div class="modal-body"> -->
+                              <!-- <p class="lead">You have been successfully signed in.</p> -->
+                              <!-- <p class="text-secondary"><small>Please take a seat and you will be called shortly!</small></p> -->
+                            <!-- </div> -->
+                            <!-- <div class="modal-footer"> -->
+                                <!-- <button type="button" class="btn btn-success" data-dismiss="modal">Close</button> -->
+                            <!-- </div> -->
+                        <!-- </div> / .modal-content -->
+                    <!-- </div> / .modal-dialog -->
+            <!-- </div> -->
+            <!--End Success Modal Templates-->
+           </div> 
+   
     
 
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="assets/js/app.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+
+    
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/14.2.1/smooth-scroll.min.js" integrity="sha256-MhIEydYjM8X/lfw31uxgXHB5BCo+bQX6BmFJYmzty7w=" crossorigin="anonymous"></script>
       
    

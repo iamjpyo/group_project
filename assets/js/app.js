@@ -11,7 +11,8 @@ function setBackgroundImage(myObject, imageUrl) {
 };
 
 var jumbotron = $("#section-jumbotron");
-var imageUrl = 'assets/images/image2.jpg';
+// var imageUrl = 'assets/images/image2.jpg';
+var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
 
 // GLOBAL VARIABLES
 // ================
@@ -38,17 +39,13 @@ var imageUrl = 'assets/images/image2.jpg';
 
 
 $(document).ready(function(){
-    //Sets background of jumbotron to imageUrl
-    setBackgroundImage(jumbotron, imageUrl);
-
     //Enables scrolling of sections on the page
     $(function(){
         var scroll = new SmoothScroll('a[href*="#section-"]');
     });
 
-    //Enables select form from Materialize
-    $('select').formSelect();
-
+    // Material Select Initialization
+    // $('.mdb-select').materialSelect();
 
     // Initialize Firebase
     var config = {
@@ -106,7 +103,27 @@ $(document).ready(function(){
 
     //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
     database.ref().push(visitor);
-       
+    var modal_dialog = $('<div class="modal-dialog bg-light border border-success text-dark p-2 text-center" style="width:450px;"></div>');
+    var modal_content = $(' <div class="modal-content"></div>');
+    var modal_header = $('<h4 class="modal-title">Thank You, ' + firstName + '!</h4>');
+    var button_close = $('<button type="button" class="close" data-dismiss="modal">&times;</button>');
+    var modal_body = $('<div class="modal-body"></div>');
+    var p_lead = $('<p class="lead">You have been successfully signed in.</p>');
+    var p_secondary = $('<p class="text-secondary"><small>Please take a seat and you will be called shortly!</small></p>');
+    var modal_footer = $('<div class="modal-footer"></div>');
+    var button_success = $('<button type="button" class="btn btn-success float-right" data-dismiss="modal">Close</button>');
+
+    modal_dialog.append(modal_content);
+    modal_dialog.append(modal_header);
+    modal_dialog.append(button_close);
+    modal_dialog.append(modal_body);
+    modal_dialog.append(p_lead);
+    modal_dialog.append(p_secondary);
+    modal_dialog.append(button_success);
+    modal_dialog.append(modal_footer);
+    
+    $("#modal-success").append(modal_dialog);
+    $("#modal-success").modal('show');   
    
     //Clears the form
     $("form").trigger("reset");
