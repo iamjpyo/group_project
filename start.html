@@ -55,12 +55,12 @@
     </nav>
     
     <!-- Jumbotron component -->
-    <section id="section-jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
       <div class="container text-center">
-          <h3 class="display-3 display-sm-4 text-light text-uppercase" id="heading">Visitor Management System</h3>
-          <p class="display-4 d-none d-sm-block">The Best Way to Manage Your Visitors</p>
-          <p class="lead">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
-          <p class="lead">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
+          <h3 class="display-3 display-sm-4 text-uppercase" id="heading">Visitor Management System</h3>
+          <h4 class="d-none d-sm-block text-info">The Best Way to Manage Your Visitors</h4>
+          <p class="lead text-secondary">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
+          <p class="lead text-secondary">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
           <p><strong>Download now on:</strong></p>
           <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-app-store mr-2" aria-hidden="true"></i>App Store</a>
           <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-google-play mr-2" aria-hidden="true"></i>Google Play</a>
@@ -79,11 +79,46 @@
         
           <!-- Trailer component -->
           <section id="section-trailer">
-            <h2 class="display-4 text-center">JB DigiWorks Trailer</h2>
-            <p class="text-center">Watch our trailer video below to learn how DigiWorks works.</p>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://youtube.com/embed/Uq5JnknTTK8"></iframe>
-            </div>
+            <div class="row">
+              <div class="col-12 col-md-12 mb-3">
+                  <div class="card border-success">
+                      <div class="card-header bg-success">
+                          <!-- These two elements will be displayed inline only on small "sm" devices and up -->
+                          <span class="h5 card-title text-white d-none d-sm-inline">VISITORS</span>
+                          <span class="h5 date-time card-title text-white d-none d-sm-inline float-right"></span>
+                          <!-- These two elements will be displayed inline only on very small devices -->
+                          <span class="h6 card-title text-white d-inline d-sm-none">VISITORS</span>
+                          <span class="h6 date-time card-title text-white d-inline d-sm-none float-right" ></span>
+                      </div>
+                      <div class="card-body" id="card-body">
+                        <table class="table table-responsive" id="visitor-table">
+                            <thead>
+                              <tr class="bg-light text-dark">
+                                
+                                <th  class="h6" scope="col" id="regNumber">Reg.No.</th>
+                                <th  class="h6" scope="col" id="firstName">First Name</th>
+                                <th  class="h6" scope="col" id="lastName">Last Name</th>
+                                <th  class="h6" scope="col" id="phone">Phone</th>
+                                <th  class="h6" scope="col" id="reason">Visit Purpose</th>
+                                <th  class="h6" scope="col" id="date">Visit Date</th>
+                                <th  class="h6" scope="col" id="meeting">Meeting With</th>
+                                <th  class="h6" scope="col" id="delCol">Time In</th>
+                                <th  class="h6" scope="col" id="delCol">Time Out</th>
+                                <th  class="h6" scope="col" id="delCol">Status</th>
+                                <th  class="h6" scope="col" id="delCol">Country Of Birth</th>
+                                <th  class="h6" scope="col" id="delCol">Health Info</th>
+                                <th  class="h6" scope="col" id="delCol">Key</th>
+                              </tr>
+                            </thead>
+                            <!-- Train info goes here! -->
+                            <tbody id="add-row">
+                            </tbody>
+                            
+                          </table>
+                      </div>
+                      
+                  </div>
+              </div>
           </section>
         
           <!-- Showcase component -->
