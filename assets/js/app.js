@@ -85,7 +85,9 @@ $(document).ready(function(){
     // Create a variable to reference the database
     var database = firebase.database();
 
-    
+      $("#dashboard").on("click", function(){
+        window.location.href = "start.html";
+      });
 
       // Capture checkin Button Click
       $("#checkin-btn").on("click", function(event) {
@@ -170,7 +172,7 @@ $(document).ready(function(){
             // console.log(childkey); 
           
             //Append new row to the table with the new train input
-            var newRow = $("<tr>");
+            var newRow = $("<tr class='clickableRow'>");
             // newRow.attr("data-key", childKey);
             newRow.append($("<td>" + regNumber + "</td>"));
             newRow.append($("<td>" + firstName + "</td>"));
@@ -196,4 +198,11 @@ $(document).ready(function(){
 
 
 });  
+
+$(document.body).on("click", "tr", ".clickableRow", function(){
+  $("tr.clickableRow").click(function () {
+    var url = $(this).attr("href", "group_project/start.html#section-overview");
+    window.location.href = url;
+  });
+});
 
