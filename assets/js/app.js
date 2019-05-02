@@ -86,7 +86,7 @@ $(document).ready(function(){
     var database = firebase.database();
 
       $("#dashboard").on("click", function(){
-        window.location.href = "./start.html";
+        window.location.href = "https://iamjpyo.github.io/group_project/start.html";
       });
 
       // Capture checkin Button Click
