@@ -53,7 +53,7 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
     var visitDate;
     var visitPurpose;
     var phone;
-    var childKey;
+    // var childKey;
  
  
   
@@ -87,77 +87,113 @@ $(document).ready(function(){
 
     
 
-  // Capture checkin Button Click
-  $("#checkin-btn").on("click", function(event) {
-    // Prevent the page from refreshing
-    event.preventDefault();
+      // Capture checkin Button Click
+      $("#checkin-btn").on("click", function(event) {
+        // Prevent the page from refreshing
+        event.preventDefault();
 
-     // Grabbed values from the form
-    firstName = $("#first_name").val().trim();
-    lastName = $("#last_name").val().trim();
-    phone = $("#phone").val().trim();
-    visitPurpose = $("#reason").val().trim();
-    regNumber = "";
-    visitDate = "";
-    meetingWith = "";
-    timeIn = "";
-    timeOut = "";
-    status = "";
-    countryBirth = "";
-    healthInfo = "";
+        // Grabbed values from the form
+        firstName = $("#first_name").val().trim();
+        lastName = $("#last_name").val().trim();
+        phone = $("#phone").val().trim();
+        visitPurpose = $("#reason").val().trim();
+        regNumber = "";
+        visitDate = "";
+        meetingWith = "";
+        timeIn = "";
+        timeOut = "";
+        status = "";
+        countryBirth = "";
+        healthInfo = "";
+        // childKey = "";
 
-    // Creates local "temporary" object for holding the visitor data
-    var visitor = {
-        regNumber: regNumber,
-        firstName: firstName,
-        lastName: lastName,
-        phone: phone,
-        visitPurpose: visitPurpose,
-        visitDate: visitDate,
-        meetingWith: meetingWith,
-        timeIn: timeIn,
-        timeOut: timeOut,
-        status: status,
-        countryBirth: countryBirth,
-        healthInfo: healthInfo,  
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
-    };
+        // Creates local "temporary" object for holding the visitor data
+        var visitor = {
+            regNumber: regNumber,
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            visitPurpose: visitPurpose,
+            visitDate: visitDate,
+            meetingWith: meetingWith,
+            timeIn: timeIn,
+            timeOut: timeOut,
+            status: status,
+            countryBirth: countryBirth,
+            healthInfo: healthInfo,  
+            // childkey: childkey,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        };
 
-    console.log(visitor);
+        // console.log(visitor);
 
-    //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
-    database.ref().push(visitor);
-    showThankYouModal();
-       
-    //Clears the form
-    $("form").trigger("reset");
-    
- });
+        //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
+        database.ref().push(visitor);
+        showThankYouModal();
+          
+        //Clears the form
+        $("form").trigger("reset");
 
- // redirect to start.html page
-//  window.location.href = 'start.html';
+        // //Hides the modal-success after 2 seconds
+        setTimeout(function() {
+            $("#modal-success").modal('hide');
+        }, 5000);
 
- //Creates Firebase event for adding visitor info to the database when a user adds an entry
- database.ref().on("child_added", function(childSnapshot) {
-       
-    //Firebase watcher + initial loader. Store everything into a variable.
-     
-        regNumber = childSnapshot.val().regNumber;
-        firstName = childSnapshot.val().firstName;
-        lastName = childSnapshot.val().lastName;
-        phone = childSnapshot.val().phone;
-        visitPurpose = childSnapshot.val().visitPurpose;
-        visitDate = childSnapshot.val().visitDate;
-        meetingWith = childSnapshot.val().meetingWith;
-        timeIn = childSnapshot.val().timeIn;
-        timeOut = childSnapshot.val().timeOut;
-        status  = childSnapshot.val().status;
-        countryBirth = childSnapshot.val().countryBirth;
-        healthInfo= childSnapshot.val().healthInfo;
-        childKey = childSnapshot.key;
-          // Handle the errors
-        }, function(errorObject) {
-            console.log("Errors handled: " + errorObject.code);
- });
+        //Hides the modal-signin after 2 seconds
+        setTimeout(function() {
+            $("#modal-signin").modal('hide');
+        }, 8000);
+        
+      });
+
+
+    //Creates Firebase event for adding visitor info to the database when a user adds an entry
+    database.ref().on("child_added", function(childSnapshot) {
+          
+        //Firebase watcher + initial loader. Store everything into a variable.
+            visitor = childSnapshot.val();
+            // console.log(visitor);
+
+            regNumber = visitor.regNumber;
+            firstName = visitor.firstName;
+            lastName = visitor.lastName;
+            phone = visitor.phone;
+            visitPurpose = visitor.visitPurpose;
+            visitDate = visitor.visitDate;
+            meetingWith = visitor.meetingWith;
+            timeIn = visitor.timeIn;
+            timeOut = visitor.timeOut;
+            status  = visitor.status;
+            countryBirth = visitor.countryBirth;
+            healthInfo= visitor.healthInfo;
+            // childKey = visitor.key;
+            // console.log(childkey); 
+          
+            //Append new row to the table with the new train input
+            var newRow = $("<tr>");
+            // newRow.attr("data-key", childKey);
+            newRow.append($("<td>" + regNumber + "</td>"));
+            newRow.append($("<td>" + firstName + "</td>"));
+            newRow.append($("<td>" + lastName + "</td>"));
+            newRow.append($("<td>" + phone + "</td>"));
+            newRow.append($("<td>" + visitPurpose + "</td>"));
+            newRow.append($("<td>" + visitDate + "</td>"));
+            newRow.append($("<td>" + meetingWith + "</td>"));
+            newRow.append($("<td>" + timeIn + "</td>"));
+            newRow.append($("<td>" + timeOut + "</td>"));
+            newRow.append($("<td>" + status + "</td>"));
+            newRow.append($("<td>" + countryBirth + "</td>"));
+            newRow.append($("<td>" + healthInfo + "</td>"));
+          //   newRow.append($("<td>" + minAway + "</td>"));
+            // newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childKey + "'>Edit</button></td>"));
+          
+          $("#add-row").append(newRow);
+
+            // Handle the errors
+            }, function(errorObject) {
+                console.log("Errors handled: " + errorObject.code);
+    });
+
 
 });  
+
