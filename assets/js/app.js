@@ -191,11 +191,11 @@ $(document).ready(function(){
           
           $("#add-row").append(newRow);
 
-
             // Handle the errors
             }, function(errorObject) {
                 console.log("Errors handled: " + errorObject.code);
     });
+
 
 });  
 
@@ -205,14 +205,4 @@ $(document.body).on("click", "tr", ".clickableRow", function(){
     window.location.href = url;
   });
 });
-
-     //Delete rows
-      $(".edit").on("click", function (event) {
-        keyref = $(this).attr("data-key");
-        var url = $(this).attr("data-href");
-        console.log(keyref);
-        database.ref().child(keyref);
-        window.location.href = url;
-            
-      });
 
