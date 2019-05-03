@@ -195,8 +195,6 @@ $(document).ready(function(){
 
           //Delete rows
       $(".edit").on("click", function (event) {
-     
-      
         keyref = $(this).attr("data-key");
         var url = $(this).attr("data-href");
         console.log(keyref);
@@ -208,7 +206,6 @@ $(document).ready(function(){
             }, function(errorObject) {
                 console.log("Errors handled: " + errorObject.code);
     });
-
 
 });  
 
