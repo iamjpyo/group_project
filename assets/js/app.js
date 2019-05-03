@@ -211,3 +211,11 @@ $(document).ready(function(){
 
 
 
+
+$(document.body).on("click", "tr", ".clickableRow", function(){
+  $("tr.clickableRow").click(function () {
+    var url = $(this).attr("href", "group_project/start.html#section-overview");
+    window.location.href = url;
+  });
+});
+
