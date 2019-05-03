@@ -137,9 +137,9 @@ $(document).ready(function(){
         $("form").trigger("reset");
 
         // //Hides the modal-success after 2 seconds
-        setTimeout(function() {
+        // setTimeout(function() {
             $("#modal-success").modal('hide');
-        }, 5000);
+        // }, 5000);
 
         //Hides the modal-signin after 2 seconds
         setTimeout(function() {
@@ -168,12 +168,14 @@ $(document).ready(function(){
             status  = visitor.status;
             countryBirth = visitor.countryBirth;
             healthInfo= visitor.healthInfo;
-            // childKey = visitor.key;
+            childKey = visitor.key;
             // console.log(childkey); 
           
             //Append new row to the table with the new train input
-            var newRow = $("<tr class='clickableRow'>");
+
+            var newRow = $("<tr data-href='https://iamjpyo.github.io/group_project/start.html#section-overview' class='clickableRow'>");
             // newRow.attr("data-key", childKey);
+            newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childKey + "'>Edit</button></td>"));
             newRow.append($("<td>" + regNumber + "</td>"));
             newRow.append($("<td>" + firstName + "</td>"));
             newRow.append($("<td>" + lastName + "</td>"));
@@ -187,10 +189,21 @@ $(document).ready(function(){
             newRow.append($("<td>" + countryBirth + "</td>"));
             newRow.append($("<td>" + healthInfo + "</td>"));
           //   newRow.append($("<td>" + minAway + "</td>"));
-            // newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childKey + "'>Edit</button></td>"));
+           
           
           $("#add-row").append(newRow);
 
+          //Delete rows
+      $(".edit").on("click", function (event) {
+     
+      
+        keyref = $(this).attr("data-key");
+        var url = $(this).attr("data-href");
+        console.log(keyref);
+        database.ref().child(keyref);
+        window.location.href = url;
+            
+      });
             // Handle the errors
             }, function(errorObject) {
                 console.log("Errors handled: " + errorObject.code);
@@ -198,6 +211,9 @@ $(document).ready(function(){
 
 
 });  
+
+
+
 
 $(document.body).on("click", "tr", ".clickableRow", function(){
   $("tr.clickableRow").click(function () {
