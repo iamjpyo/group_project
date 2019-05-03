@@ -1,10 +1,8 @@
+
 body{
     background:#eee    
 }
 
-.container{
-    margin: 5% auto;
-}
 
 .form-dark .font-small {
     font-size: 0.8rem; }
@@ -165,11 +163,11 @@ body{
 
 
  
-.jumbotron {
+/* .jumbotron {
    height: 100%;
    min-height: 100vh;
    
-}
+} */
 
 /* section {
     padding-top: 4rem;
@@ -188,10 +186,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #heading {
-    color: #f7f4f4;
+    color: #0857b1;
     /* background: #FFFFFF; */
     text-shadow: 4px 4px 0px rgb(32, 32, 37), 5px 4px 0px rgba(0,0,0,0.15);
-    color: #f7f4f4;
+    color: #0857b1;
     /* background: #FFFFFF; */
 }
 
@@ -209,5 +207,36 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
     max-width: 200px;
 }
+table {
+    width: 100%;
+    max-width: 960px;
+}
 
+#visitor-table tr:hover{
+    cursor: pointer;
+  }
 
+#section-jumbotron {
+    padding-top: 20px;
+    height: 700px;
+}
+
+#jumbo_container {
+    padding-top: 50px;
+    height: 700px;
+}
+
+#section-about {
+    padding-top: 40px;
+    height: 700px;
+}
+
+#section-visitors {
+    padding-top: 70px;
+    height: 700px;
+}
+
+#section-overview {
+    padding-top: 70px;
+    height: 900px;
+}

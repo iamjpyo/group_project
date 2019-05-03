@@ -24,7 +24,7 @@
     <!-- Customized Style CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Landing Page: JB DigiWorks</title>
+    <title>Landing Page: Visitor Management System</title>
       
     
       
@@ -35,17 +35,17 @@
     <!-- Navigation component -->
     <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
       <!-- All the navigation bar content goes here -->
-        <a href="#" class="navbar-brand"><i class="fas fa-file-medical-alt mr-2" aria-hidden="true"></i>VMS Visitor Management System</a>
+        <a href="#" class="navbar-brand"><i class="fas fa-file-medical-alt mr-2" aria-hidden="true"></i>VMS Dashboard</a>
         <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" ></span>
         </button>
         
         <div class="collapse navbar-collapse" id="myNav">
             <ul class="navbar-nav" id="navScrollspy">
-              <li class="nav-item"><a href="#section-jumbotron" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="#section-description" class="nav-link">Visitors</a></li>
-              <li class="nav-item"><a href="#section-trailer" class="nav-link">History</a></li>
-              <li class="nav-item"><a href="#section-showcase" class="nav-link">Reports</a></li>
+              <li class="nav-item"><a href="#section-jumbotron" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#section-visitors" class="nav-link">Visitors</a></li>
+              <li class="nav-item"><a href="#section-overview" class="nav-link">Visitor Overview</a></li>
               <li class="nav-item"><a href="#section-features" class="nav-link">Features</a></li>
               <li class="nav-item"><a href="#section-pricing" class="nav-link">Pricing</a></li>
               <li class="nav-item"><a href="#section-reviews" class="nav-link">Reviews</a></li>
@@ -55,12 +55,12 @@
     </nav>
     
     <!-- Jumbotron component -->
-    <section id="section-jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
       <div class="container text-center">
-          <h3 class="display-3 display-sm-4 text-light text-uppercase" id="heading">Visitor Management System</h3>
-          <p class="display-4 d-none d-sm-block">The Best Way to Manage Your Visitors</p>
-          <p class="lead">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
-          <p class="lead">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
+          <h3 class="display-3 display-sm-4 text-uppercase" id="heading">Visitor Management System</h3>
+          <h4 class="d-none d-sm-block text-info">The Best Way to Manage Your Visitors</h4>
+          <p class="lead text-secondary">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
+          <p class="lead text-secondary">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
           <p><strong>Download now on:</strong></p>
           <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-app-store mr-2" aria-hidden="true"></i>App Store</a>
           <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-google-play mr-2" aria-hidden="true"></i>Google Play</a>
@@ -71,75 +71,155 @@
     <div class="container">
         
           <!-- Description component -->
-          <section id="section-description" >
+          <section id="section-about" >
             <h2 class="display-4 text-center">What is VMS?</h2>
             <p>JB DigiWorks is an innovative digital app for both iOS and Android that lets you recreate the best moments in life either on still photos or video. DigiWorks has many useful features to enhance the photos and videos with editing tools, filters and effects. And when you are done, you can easily share your result with all of your friends and the rest of the world through Instagram and Facebook. </p>
             <p>JB DigiWorks has been designed from the bottom up by photography experts and award-winning app developers to makesure you get the best digital app ever created. We are continuously improving the app with new features - this is just the beginning.</p>
           </section>
         
           <!-- Trailer component -->
-          <section id="section-trailer">
-            <h2 class="display-4 text-center">JB DigiWorks Trailer</h2>
-            <p class="text-center">Watch our trailer video below to learn how DigiWorks works.</p>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://youtube.com/embed/Uq5JnknTTK8"></iframe>
-            </div>
+          <section id="section-visitors">
+            <h2 class="display-4 text-center">Visitor Directory</h2>
+            <div class="row">
+              <div class="col-12 col-md-12 mb-3">
+                  <div class="card border-success">
+                      <div class="card-header bg-success">
+                          <!-- These two elements will be displayed inline only on small "sm" devices and up -->
+                          <span class="h5 card-title text-white d-none d-sm-inline">VISITORS</span>
+                          <span class="h5 date-time card-title text-white d-none d-sm-inline float-right"></span>
+                          <!-- These two elements will be displayed inline only on very small devices -->
+                          <span class="h6 card-title text-white d-inline d-sm-none">VISITORS</span>
+                          <span class="h6 date-time card-title text-white d-inline d-sm-none float-right" ></span>
+                      </div>
+                      <div class="card-body" id="card-body">
+                        <table class="table table-hover table-responsive" id="visitor-table">
+                            <thead>
+                              <tr class="bg-light text-dark">
+                                
+                                <th  class="h6" scope="col" >Reg.No.</th>
+                                <th  class="h6" scope="col" >First Name</th>
+                                <th  class="h6" scope="col" >Last Name</th>
+                                <th  class="h6" scope="col" >Phone</th>
+                                <th  class="h6" scope="col" >Visit Purpose</th>
+                                <th  class="h6" scope="col" >Visit Date</th>
+                                <th  class="h6" scope="col" >Meeting With</th>
+                                <th  class="h6" scope="col" >Time In</th>
+                                <th  class="h6" scope="col" >Time Out</th>
+                                <th  class="h6" scope="col" >Status</th>
+                                <th  class="h6" scope="col" >Country Of Birth</th>
+                                <th  class="h6" scope="col" >Health Info</th>
+                                <th  class="h6" scope="col" >Key</th>
+                              </tr>
+                            </thead>
+                            <!-- Visitors info goes here! -->
+                            <tbody id="add-row">
+                            </tbody>
+                            
+                          </table>
+                      </div>
+                      
+                  </div>
+              </div>
           </section>
         
           <!-- Showcase component -->
-          <section id="section-showcase">
-            <h2 class="display-4 text-center">JB DigiWorks in action</h2>
-            <p class="text-center">Examples of how and where you can use JB DigiWorks.</p>
-
-                <div id="carousel" class="carousel slide" data-ride="carousel">
-
-                      <ol class="carousel-indicators">
-                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel" data-slide-to="1"></li>
-                        <li data-target="#carousel" data-slide-to="2"></li>
-                        <li data-target="#carousel" data-slide-to="3"></li>
-                      </ol>
-
-                      <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                          <img src="assets/images/at-night.jpg" alt="First slide" class="d-block img-fluid">
-                          <div class="carousel-caption">
-                            <h3 class="display-4">At night</h3>
-                            <p>Use JB DigiWorks at night when going out with friends.</p>
-                          </div>
+          <section id="section-overview">
+            <h2 class="display-4 text-center">Visitor Contact Info</h2>
+            <div class="row">
+                <div class="col-md-3 ">
+                     <div class="list-group ">
+                          <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                          <a href="#" class="list-group-item list-group-item-action">User Management</a>
+                          <a href="#" class="list-group-item list-group-item-action">Used</a>
+                          <a href="#" class="list-group-item list-group-item-action">Enquiry</a>
+                          <a href="#" class="list-group-item list-group-item-action">Dealer</a>
+                          <a href="#" class="list-group-item list-group-item-action">Media</a>
+                          <a href="#" class="list-group-item list-group-item-action">Post</a>
+                          <a href="#" class="list-group-item list-group-item-action">Category</a>
+                          <a href="#" class="list-group-item list-group-item-action">New</a>
+                          <a href="#" class="list-group-item list-group-item-action">Comments</a>
+                          <a href="#" class="list-group-item list-group-item-action">Appearance</a>
+                          <a href="#" class="list-group-item list-group-item-action">Reports</a>
+                          <a href="#" class="list-group-item list-group-item-action">Settings</a>
+                          
+                          
+                        </div> 
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4>Visitor Details</h4>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form>
+                                          
+                                          <div class="form-group row">
+                                            <label for="name" class="col-4 col-form-label">First Name</label> 
+                                            <div class="col-8">
+                                              <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="lastname" class="col-4 col-form-label">Last Name</label> 
+                                            <div class="col-8">
+                                              <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="text" class="col-4 col-form-label">Nick Name*</label> 
+                                            <div class="col-8">
+                                              <input id="text" name="text" placeholder="Nick Name" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="select" class="col-4 col-form-label">Display Name public as</label> 
+                                            <div class="col-8">
+                                              <select id="select" name="select" class="custom-select">
+                                                <option value="admin">Admin</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="email" class="col-4 col-form-label">Email*</label> 
+                                            <div class="col-8">
+                                              <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="website" class="col-4 col-form-label">Website</label> 
+                                            <div class="col-8">
+                                              <input id="website" name="website" placeholder="website" class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="healthinfo" class="col-4 col-form-label">Health Info</label> 
+                                            <div class="col-8">
+                                              <textarea id="healthinfo" name="healthinfo" cols="40" rows="4" class="form-control"></textarea>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="comments" class="col-4 col-form-label">Comments</label> 
+                                            <div class="col-8">
+                                              <input id="comments" name="comments" placeholder="Additional info" class="form-control here" type="text">
+                                            </div>
+                                          </div> 
+                                          <div class="form-group row">
+                                            <div class="offset-4 col-8">
+                                              <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                            </div>
+                                          </div>
+                                        </form>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="carousel-item">
-                          <img src="assets/images/outside.jpg" alt="Second slide" class="d-block img-fluid">
-                          <div class="carousel-caption">
-                            <h3 class="display-4">Outside</h3>
-                            <p>Use DigiWorks outside when walking in the nature.</p>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <img src="assets/images/in-the-sun.jpg" alt="Third slide" class="d-block img-fluid">
-                          <div class="carousel-caption">
-                            <h3 class="display-4">In the sun</h3>
-                            <p>Use JB DigiWorks even with strong and direct sun.</p>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <img src="assets/images/distance.jpg" alt="Fourth slide" class="d-block img-fluid">
-                          <div class="carousel-caption">
-                            <h3 class="display-4">In the distance</h3>
-                            <p>Use JB DigiWorks to take clear photos of objects far away.</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-               </div>
+                    </div>
+                </div>
           </section> 
         
           <!-- Features component -->
