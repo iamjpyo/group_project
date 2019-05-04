@@ -37,12 +37,12 @@ function showThankYouModal() {
 
 function notificationModal() {
   
-  var modal_dialog2 = $('<div class="modal-dialog bg-info border border-info text-dark p-2 text-center" style="width:450px;"></div>');
+  var modal_dialog2 = $('<div class="modal-dialog bg-info border border-info text-white p-2 text-center" style="width:450px;"></div>');
   var modal_content2 = $(' <div class="modal-content"></div>');
   var modal_header2 = $('<h4 class="modal-title">Arrival Notification!</h4>');
   var button_close2 = $('<button type="button" class="close" data-dismiss="modal">&times;</button>');
   var modal_body2 = $('<div class="modal-body"></div>');
-  var p_lead2 = $('<p class="lead">'+ firstName + lastName + ' has arrived!</p>');
+  var p_lead2 = $('<p class="lead">'+ firstName +'  '+ lastName + ' has arrived!</p>');
   var p_secondary2 = $('<p class="text-secondary"><small>Please follow up!</small></p>');
   var modal_footer2 = $('<div class="modal-footer"></div>');
   var button_success2 = $('<button type="button" class="btn btn-success float-right" data-dismiss="modal">Close</button>');
@@ -56,9 +56,10 @@ function notificationModal() {
   modal_dialog2.append(button_success2);
   modal_dialog2.append(modal_footer2);
   
-  $("#modal-info").html(modal_dialogs);
+  $("#modal-info").html(modal_dialog2);
   $("#modal-info").modal('show');   
 };
+
 function getVisitorData(data) {
   var visitors = data.val();
   var keys = Object.keys(visitors);
@@ -129,7 +130,7 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
 
 $(document).ready(function(){
   var time = moment().format("h:mm:ss a");
-
+  var date = moment().format("DD/MM/YY");
   // setInterval(updateClock, 1000);
     //Enables scrolling of sections on the page
     // $(function(){
@@ -155,7 +156,7 @@ $(document).ready(function(){
    
 
       $("#dashboard").on("click", function(){
-        window.location.href = "https://iamjpyo.github.io/group_project/start.html";
+        window.location.href = "start.html";
       });
 
       // Capture checkin Button Click
@@ -169,7 +170,7 @@ $(document).ready(function(){
         phone = $("#phone").val().trim();
         visitPurpose = $("#reason").val().trim();
         // regNumber = "";
-        visitDate = "";
+        visitDate = date;
         meetingWith = "";
         timeIn = time;
         timeOut = "";
@@ -201,8 +202,7 @@ $(document).ready(function(){
         //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
         database.ref().push(visitor);
         showThankYouModal();
-        notificationModal();
-        
+        notificationModal();     
           
         //Clears the form
         $("form").trigger("reset");
