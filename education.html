@@ -24,7 +24,7 @@
     <!-- Customized Style CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Dashboard Page</title>
+    <title>Education Page</title>
       
     
       
@@ -42,41 +42,50 @@
         
         <div class="collapse navbar-collapse" id="myNav">
             <ul class="navbar-nav" id="navScrollspy">
-              <li class="nav-item"><a href="start.html" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="start.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="visitors.html" class="nav-link">Visitors</a></li>
               <li class="nav-item"><a href="reports.html" class="nav-link">Reports</a></li>
-              <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
-             </ul>
+              <li class="nav-item"><a href="education.html" class="nav-link active">Education</a></li>
+              
+            </ul>
         
         </div>
     </nav>
-    
-    <!-- Jumbotron component -->
-    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
-      <div class="container text-center">
-          <h3 class="display-3 display-sm-4 text-uppercase" id="heading">Visitor Management System</h3>
-          <h4 class="d-none d-sm-block text-info">The Best Way to Manage Your Visitors</h4>
-          <p class="lead text-secondary">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
-          <p class="lead text-secondary">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
-          <p><strong>Download now on:</strong></p>
-          <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-app-store mr-2" aria-hidden="true"></i>App Store</a>
-          <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-google-play mr-2" aria-hidden="true"></i>Google Play</a>
-      </div>
-    </section>
-        <!--Success Modal Templates-->
-        <div id="modal-info" class="modal modal-message modal-info fade "  aria-hidden="true">
-                   
-        </div> 
-    
+      
       
     <div class="container my-5"> 
-          <!-- Description component -->
-          <section id="section-about" class="my-2">
-            <h5 class="display-5 text-center">What is VMS?</h5>
-            <p>Visitor Management System  is an innovative digital app that makes your visitors truly welcome. It boots productivity with a fast check-in process, notifying employees of visitor arrivals and activity.</p>
-            <p>VMS maximizes your front desk’s efficiency by allowing the receptionist to work on other important projects while your visitors sign themselves in with the Sign in App. Provides immediate arrival notification.</p>
-          </section>
-        
+        <!-- Showcase component -->
+        <section id="section-education" class="my-2">
+            <h5 class="display-5 text-center">Search Your Topic...</h5>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <!-- <div class="container text-center mt-2 "> -->
+                        <div class="d-flex justify-content-center h-100">
+                          <div class="searchbar">
+                            <input class="search_input" type="text" name="searchTerm" placeholder="Search..."/>
+                            <a href="#" id="search" class="search_icon"><i class="fas fa-search"></i></a>
+                          </div>
+                        </div>   
+                      <!-- </div> -->
+                </div>
+                <div class="row">
+                    <section class="container mt-2 mx-auto">
+                        <div class="row" id="outputWiki">
+                          <!-- <div class="col-12 col-sm-12" id="outputWiki">
+                            <div id="outputWiki"></div>
+                          </div> -->
+                        </div>
+                  
+                        <div class="row">
+                          <div class="col-12 col-sm-12" id="outputYoutube">
+                            <!-- <div id="outputYoutube"></div> -->
+                          </div>
+                        </div>
+                      </section>
+                </div>
+                      
+             </div>  
+        </section> 
     </div>    
    
         

@@ -11,6 +11,7 @@ function setBackgroundImage(myObject, imageUrl) {
 };
 
 function showThankYouModal() {
+  
     var modal_dialog = $('<div class="modal-dialog bg-light border border-success text-dark p-2 text-center" style="width:450px;"></div>');
     var modal_content = $(' <div class="modal-content"></div>');
     var modal_header = $('<h4 class="modal-title">Thank You, ' + firstName + '!</h4>');
@@ -30,10 +31,34 @@ function showThankYouModal() {
     modal_dialog.append(button_success);
     modal_dialog.append(modal_footer);
     
-    $("#modal-success").append(modal_dialog);
+    $("#modal-success").html(modal_dialog);
     $("#modal-success").modal('show');   
 };
 
+function notificationModal() {
+  
+  var modal_dialog2 = $('<div class="modal-dialog bg-info border border-info text-dark p-2 text-center" style="width:450px;"></div>');
+  var modal_content2 = $(' <div class="modal-content"></div>');
+  var modal_header2 = $('<h4 class="modal-title">Arrival Notification!</h4>');
+  var button_close2 = $('<button type="button" class="close" data-dismiss="modal">&times;</button>');
+  var modal_body2 = $('<div class="modal-body"></div>');
+  var p_lead2 = $('<p class="lead">'+ firstName + lastName + ' has arrived!</p>');
+  var p_secondary2 = $('<p class="text-secondary"><small>Please follow up!</small></p>');
+  var modal_footer2 = $('<div class="modal-footer"></div>');
+  var button_success2 = $('<button type="button" class="btn btn-success float-right" data-dismiss="modal">Close</button>');
+
+  modal_dialog2.append(modal_content2);
+  modal_dialog2.append(modal_header2);
+  modal_dialog2.append(button_close2);
+  modal_dialog2.append(modal_body2);
+  modal_dialog2.append(p_lead2);
+  modal_dialog2.append(p_secondary2);
+  modal_dialog2.append(button_success2);
+  modal_dialog2.append(modal_footer2);
+  
+  $("#modal-info").html(modal_dialogs);
+  $("#modal-info").modal('show');   
+};
 function getVisitorData(data) {
   var visitors = data.val();
   var keys = Object.keys(visitors);
@@ -55,6 +80,19 @@ function getVisitorData(data) {
     $('select[name="reason"] option:selected').text(visitPurpose);   
   };
   
+};
+
+function updateClock() {
+  // var clock = moment().format("MM/DD/YY h:mm:ss a");
+  // $(".date-time").html(clock); 
+    // // Get current time in seconds
+    var currentTimeSec = moment();
+    console.log("Current Time in seconds:" + moment(currentTimeSec).format("ss"));
+    // if(moment(currentTimeSec).format("ss") == 00)
+    // {
+    //   // When current seconds=00
+    //     location.reload();     
+    // }
 };
 
 function errData(err) {
@@ -90,10 +128,13 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
 
 
 $(document).ready(function(){
+  var time = moment().format("h:mm:ss a");
+
+  // setInterval(updateClock, 1000);
     //Enables scrolling of sections on the page
-    $(function(){
-        var scroll = new SmoothScroll('a[href*="#section-"]');
-    });
+    // $(function(){
+    //     var scroll = new SmoothScroll('a[href*="#section-"]');
+    // });
 
     // Material Select Initialization
     // $('.mdb-select').materialSelect();
@@ -127,13 +168,12 @@ $(document).ready(function(){
         lastName = $("#last_name").val().trim();
         phone = $("#phone").val().trim();
         visitPurpose = $("#reason").val().trim();
-        
         // regNumber = "";
         visitDate = "";
         meetingWith = "";
-        timeIn = "";
+        timeIn = time;
         timeOut = "";
-        status = "";
+        status = "Checked-In";
         countryBirth = "";
         healthInfo = "";
         childkey = "";
@@ -161,13 +201,15 @@ $(document).ready(function(){
         //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
         database.ref().push(visitor);
         showThankYouModal();
+        notificationModal();
+        
           
         //Clears the form
         $("form").trigger("reset");
 
         // //Hides the modal-success after 2 seconds
         // setTimeout(function() {
-            $("#modal-success").modal('hide');
+            // $("#modal-success").modal('hide');
         // }, 5000);
 
         //Hides the modal-signin after 2 seconds
@@ -228,17 +270,22 @@ $(document).ready(function(){
 });  
 
 $(document.body).on("click", "tr", ".clickable", function(event){
+  
   //Edit rows
   database = firebase.database();
   var ref = database.ref();
   var $thisRow = $(this).closest("tr");       // Finds the closest row <tr> 
   var $tds = $thisRow.find("td");             // Finds all children <td> elements
-      // $tds = $thisRow.find("td:nth-child(2)"); // Finds the 2nd <td> element
     
+  
+
     $('input[name="firstName"]').val($thisRow.find("td:nth-child(2)").text());  
     $('input[name="lastName"]').val($thisRow.find("td:nth-child(3)").text());
     $('input[name="phone"]').val($thisRow.find("td:nth-child(4)").text());
     $('select[name="reason"] option:selected').text($thisRow.find("td:nth-child(5)").text()); 
+    $('input[name="timeIn"]').val($thisRow.find("td:nth-child(8)").text()); 
+    $('input[name="status"]').val($thisRow.find("td:nth-child(10)").text());
+    
   // var index = 0;
   // $.each($tds, function(index) {  
   //   index             // Visits every single <td> element
@@ -256,17 +303,6 @@ $(document.body).on("click", "tr", ".clickable", function(event){
 
 }); 
 
-// $(document.body).on("click", "tr", ".clickableRow", function () {
-//   // $("tr.clickableRow").click(function () {
-//     console.log("works")
-//     var rows = document.getElementById("visitor-table").getElementsByTagName("tr");
-//     function getFirstCol(row) {
-//       alert(row.getElementsByTagName('td')[1].innerHTML);
-//     }
-
-//     console.log(getFirstCol(rows[1]));
-
-// });
 
      
 

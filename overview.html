@@ -24,7 +24,7 @@
     <!-- Customized Style CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Dashboard Page</title>
+    <title>Visitor Overview</title>
       
     
       
@@ -42,40 +42,120 @@
         
         <div class="collapse navbar-collapse" id="myNav">
             <ul class="navbar-nav" id="navScrollspy">
-              <li class="nav-item"><a href="start.html" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="start.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="visitors.html" class="nav-link">Visitors</a></li>
+              <li class="nav-item"><a href="overview.html" class="nav-link active">Visitor Overview</a></li>
               <li class="nav-item"><a href="reports.html" class="nav-link">Reports</a></li>
               <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
-             </ul>
+              <li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+            </ul>
         
         </div>
     </nav>
-    
-    <!-- Jumbotron component -->
-    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
-      <div class="container text-center">
-          <h3 class="display-3 display-sm-4 text-uppercase" id="heading">Visitor Management System</h3>
-          <h4 class="d-none d-sm-block text-info">The Best Way to Manage Your Visitors</h4>
-          <p class="lead text-secondary">Welcome visitors to your office. Boost productivity with a fast check-in process. Notify the front desk and medical staff of their guests with a smart, simple and secure system.</p>
-          <p class="lead text-secondary">Collect and store visitors data and demographic information to help you improve your visitors experience.</p>
-          <p><strong>Download now on:</strong></p>
-          <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-app-store mr-2" aria-hidden="true"></i>App Store</a>
-          <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-google-play mr-2" aria-hidden="true"></i>Google Play</a>
-      </div>
-    </section>
-        <!--Success Modal Templates-->
-        <div id="modal-info" class="modal modal-message modal-info fade "  aria-hidden="true">
-                   
-        </div> 
-    
+      
       
     <div class="container my-5"> 
-          <!-- Description component -->
-          <section id="section-about" class="my-2">
-            <h5 class="display-5 text-center">What is VMS?</h5>
-            <p>Visitor Management System  is an innovative digital app that makes your visitors truly welcome. It boots productivity with a fast check-in process, notifying employees of visitor arrivals and activity.</p>
-            <p>VMS maximizes your front desk’s efficiency by allowing the receptionist to work on other important projects while your visitors sign themselves in with the Sign in App. Provides immediate arrival notification.</p>
-          </section>
+        <!-- Showcase component -->
+        <section id="section-overview" class="my-2">
+            <h5 class="display-5 text-center">Visitor Overview</h5>
+            <div class="row">
+                <div class="col-md-3 ">
+                     <div class="list-group ">
+                          <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                          <a href="#" class="list-group-item list-group-item-action">Visitor Management</a>
+                          <a href="#" class="list-group-item list-group-item-action">Name</a>
+                          <a href="#" class="list-group-item list-group-item-action">Demographics</a>
+                          <a href="#" class="list-group-item list-group-item-action">Address</a>
+                          <a href="#" class="list-group-item list-group-item-action">Contact Details</a>
+                          <a href="#" class="list-group-item list-group-item-action">Appointments</a>
+                          <a href="#" class="list-group-item list-group-item-action">Clinical Info</a>
+                          <a href="#" class="list-group-item list-group-item-action">Additional Info</a>
+                          <a href="#" class="list-group-item list-group-item-action">History</a>
+                          
+                        </div> 
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6>Visitor Details</h6>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="formData">
+                                          
+                                          <div class="form-group row">
+                                            <label id="firstName" for="firstName" class="col-4 col-form-label">First Name</label> 
+                                            <div class="col-8">
+                                              <input id="firstName" name="firstName"  class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="lastName" class="col-4 col-form-label">Last Name</label> 
+                                            <div class="col-8">
+                                              <input id="lastName" name="lastName" class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="phonet" class="col-4 col-form-label">Phone</label> 
+                                            <div class="col-8">
+                                              <input id="phone" name="phone"  class="form-control here" required="required" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="reason" class="col-4 col-form-label">Reason for visit</label> 
+                                            <div class="col-8">
+                                              <select class="browser-default mt-3 bg-light rounded" name="reason" id="reason">
+                                                <option selected>Reason for your visit</option> 
+                                            </select>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <p class="form- grey-tex">Sex</p>
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
+                                                <label class="custom-control-label" for="defaultInline1">1</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox custom-control-inline">
+                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
+                                                <label class="custom-control-label" for="defaultInline1">1</label>
+                                            </div>
+                                            
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="website" class="col-4 col-form-label">Website</label> 
+                                            <div class="col-8">
+                                              <input id="website" name="website" placeholder="website" class="form-control here" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="healthinfo" class="col-4 col-form-label">Health Info</label> 
+                                            <div class="col-8">
+                                              <textarea id="healthinfo" name="healthinfo" cols="40" rows="4" class="form-control"></textarea>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <label for="comments" class="col-4 col-form-label">Comments</label> 
+                                            <div class="col-8">
+                                              <input id="comments" name="comments" placeholder="Additional info" class="form-control here" type="text">
+                                            </div>
+                                          </div> 
+                                          <div class="form-group row">
+                                            <div class="offset-4 col-8">
+                                              <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                            </div>
+                                          </div>
+                                        </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+          </section> 
         
     </div>    
    
