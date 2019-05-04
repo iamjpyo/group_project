@@ -3,6 +3,9 @@ body{
     background:#eee    
 }
 
+.container {
+    max-width: 980px !important;
+}
 
 .form-dark .font-small {
     font-size: 0.8rem; }
@@ -209,7 +212,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 table {
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px !important;
+    height: 500px;
+    table-layout: fixed !important;
+}
+#visitor-table tbody th {
+    width: 100px !important;
 }
 
 #visitor-table tr:hover{
@@ -237,6 +245,6 @@ table {
 }
 
 #section-overview {
-    padding-top: 70px;
+    padding-top: 80px;
     height: 900px;
 }

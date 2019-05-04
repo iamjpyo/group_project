@@ -34,13 +34,40 @@ function showThankYouModal() {
     $("#modal-success").modal('show');   
 };
 
+function getVisitorData(data) {
+  var visitors = data.val();
+  var keys = Object.keys(visitors);
+  console.log("Visitors: " + visitors);
+  console.log("Keys: " + keys);
+  for (var i = 0; i < keys.length; i++) {
+    var k = keys[i];
+    console.log("Key[" + i + "]: " + k );
+
+    var firstName = visitors[k].firstName;
+    var lastName = visitors[k].lastName;
+    var phone = visitors[k].phone;
+    var visitPurpose = visitors[k].visitPurpose;
+    
+    $(".formData").val("");
+    $('input[name="firstName"]').val(firstName);
+    $('input[name="lastName"]').val(lastName);
+    $('input[name="phone"]').val(phone);
+    $('select[name="reason"] option:selected').text(visitPurpose);   
+  };
+  
+};
+
+function errData(err) {
+ console.log('Error: ' + err);
+};
+
 var jumbotron = $("#section-jumbotron");
 // var imageUrl = 'assets/images/image2.jpg';
 var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
 
 // GLOBAL VARIABLES
 // ================
-    var regNumber;
+    // var regNumber;
     var countryBirth;
     var createdBy;
     var firstName;
@@ -53,7 +80,7 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
     var visitDate;
     var visitPurpose;
     var phone;
-    // var childKey;
+    var childKey;
  
  
   
@@ -84,6 +111,7 @@ $(document).ready(function(){
 
     // Create a variable to reference the database
     var database = firebase.database();
+   
 
       $("#dashboard").on("click", function(){
         window.location.href = "https://iamjpyo.github.io/group_project/start.html";
@@ -99,7 +127,8 @@ $(document).ready(function(){
         lastName = $("#last_name").val().trim();
         phone = $("#phone").val().trim();
         visitPurpose = $("#reason").val().trim();
-        regNumber = "";
+        
+        // regNumber = "";
         visitDate = "";
         meetingWith = "";
         timeIn = "";
@@ -107,11 +136,11 @@ $(document).ready(function(){
         status = "";
         countryBirth = "";
         healthInfo = "";
-        // childKey = "";
+        childkey = "";
 
         // Creates local "temporary" object for holding the visitor data
         var visitor = {
-            regNumber: regNumber,
+            // regNumber: regNumber,
             firstName: firstName,
             lastName: lastName,
             phone: phone,
@@ -137,14 +166,14 @@ $(document).ready(function(){
         $("form").trigger("reset");
 
         // //Hides the modal-success after 2 seconds
-        setTimeout(function() {
+        // setTimeout(function() {
             $("#modal-success").modal('hide');
-        }, 5000);
+        // }, 5000);
 
         //Hides the modal-signin after 2 seconds
-        setTimeout(function() {
+        // setTimeout(function() {
             $("#modal-signin").modal('hide');
-        }, 8000);
+        // }, 1000);
         
       });
 
@@ -154,9 +183,9 @@ $(document).ready(function(){
           
         //Firebase watcher + initial loader. Store everything into a variable.
             visitor = childSnapshot.val();
-            // console.log(visitor);
+            console.log(visitor);
 
-            regNumber = visitor.regNumber;
+            // regNumber = visitor.regNumber;
             firstName = visitor.firstName;
             lastName = visitor.lastName;
             phone = visitor.phone;
@@ -168,13 +197,14 @@ $(document).ready(function(){
             status  = visitor.status;
             countryBirth = visitor.countryBirth;
             healthInfo= visitor.healthInfo;
-            // childKey = visitor.key;
+            childkey = visitor.dateAdded;
             // console.log(childkey); 
           
             //Append new row to the table with the new train input
             var newRow = $("<tr class='clickableRow'>");
+            newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childkey + "'>Edit</button></td>"));
             // newRow.attr("data-key", childKey);
-            newRow.append($("<td>" + regNumber + "</td>"));
+            // newRow.append($("<td>" + regNumber + "</td>"));
             newRow.append($("<td>" + firstName + "</td>"));
             newRow.append($("<td>" + lastName + "</td>"));
             newRow.append($("<td>" + phone + "</td>"));
@@ -186,23 +216,57 @@ $(document).ready(function(){
             newRow.append($("<td>" + status + "</td>"));
             newRow.append($("<td>" + countryBirth + "</td>"));
             newRow.append($("<td>" + healthInfo + "</td>"));
-          //   newRow.append($("<td>" + minAway + "</td>"));
-            // newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childKey + "'>Edit</button></td>"));
+            newRow.append($("<td class='key'>" + childkey + "</td>"));
+            
           
           $("#add-row").append(newRow);
 
-            // Handle the errors
             }, function(errorObject) {
                 console.log("Errors handled: " + errorObject.code);
     });
 
-
 });  
 
-$(document.body).on("click", "tr", ".clickableRow", function(){
-  $("tr.clickableRow").click(function () {
-    var url = $(this).attr("href", "group_project/start.html#section-overview");
-    window.location.href = url;
-  });
-});
+$(document.body).on("click", "tr", ".clickable", function(event){
+  //Edit rows
+  database = firebase.database();
+  var ref = database.ref();
+  var $thisRow = $(this).closest("tr");       // Finds the closest row <tr> 
+  var $tds = $thisRow.find("td");             // Finds all children <td> elements
+      // $tds = $thisRow.find("td:nth-child(2)"); // Finds the 2nd <td> element
+    
+    $('input[name="firstName"]').val($thisRow.find("td:nth-child(2)").text());  
+    $('input[name="lastName"]').val($thisRow.find("td:nth-child(3)").text());
+    $('input[name="phone"]').val($thisRow.find("td:nth-child(4)").text());
+    $('select[name="reason"] option:selected').text($thisRow.find("td:nth-child(5)").text()); 
+  // var index = 0;
+  // $.each($tds, function(index) {  
+  //   index             // Visits every single <td> element
+  //   console.log($(this).text());        // Prints out the text within the <td>
+  // });
+
+  // var thisRowKey = $(this).find('.key').text();
+  // var thisRow = $("tr.clickableRow").html();
+  // console.log(thisRow);
+  // console.log(thisRowKey);
+   
+  //  console.log("Reference: " + ref);
+  //  ref.once("value", getVisitorData, errData);
+
+
+}); 
+
+// $(document.body).on("click", "tr", ".clickableRow", function () {
+//   // $("tr.clickableRow").click(function () {
+//     console.log("works")
+//     var rows = document.getElementById("visitor-table").getElementsByTagName("tr");
+//     function getFirstCol(row) {
+//       alert(row.getElementsByTagName('td')[1].innerHTML);
+//     }
+
+//     console.log(getFirstCol(rows[1]));
+
+// });
+
+     
 
