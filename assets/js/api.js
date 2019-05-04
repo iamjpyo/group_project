@@ -30,7 +30,7 @@ function showResults() {
       var thumb = data.items[x].snippet.thumbnails.default.url;
       var videoID = data.items[x].id.videoId;
       outputYoutube.innerHTML +=
-        '<div class="panel"><div class="wrap"><div class="content">' +
+        '<div class="card text-center mb-2" style="width:300px;" ><div class="card-body"><div class="card-content">' +
         title +
         '</div><a href="https://youtu.be/' +
         videoID +
