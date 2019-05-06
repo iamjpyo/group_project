@@ -35,7 +35,7 @@
     <!-- Navigation component -->
     <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
       <!-- All the navigation bar content goes here -->
-        <a href="#" class="navbar-brand"><i class="fas fa-file-medical-alt mr-2" aria-hidden="true"></i>VMS Dashboard</a>
+        <a href="index.html" class="navbar-brand"><i class="fas fa-file-medical-alt mr-2" aria-hidden="true"></i>VMS Dashboard</a>
         <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" ></span>
         </button>
@@ -44,6 +44,7 @@
             <ul class="navbar-nav" id="navScrollspy">
               <li class="nav-item"><a href="start.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="visitors.html" class="nav-link active">Visitors</a></li>
+              <li class="nav-item"><a href="overview.html" class="nav-link ">Visitor Overview</a></li>
               <li class="nav-item"><a href="reports.html" class="nav-link">Reports</a></li>
               <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
               
@@ -56,24 +57,24 @@
     <div class="container">          
           <!-- Visitor component -->
           <section id="section-visitors">
-            <h5 class="display-5 text-center">Visitors</h5>
+            <!-- <h5 class="display-5 text-center">Visitors</h5> -->
             <div class="row">
-              <div class="col-12 col-md-12 mb-3">
-                  <div class="card border-primary">
-                      <div class="card-header bg-primary">
+              <div class="col-12 col-md-12 ">
+                  <div class="card border-info">
+                      <div class="card-header bg-info">
                           <!-- These two elements will be displayed inline only on small "sm" devices and up -->
-                          <span class="h6 card-title text-white d-none d-sm-inline">VISITORS</span>
+                          <span class="display-4 card-title text-white d-none d-sm-inline">List of visitors</span>
                           <!-- <span class="h5 date-time card-title text-white d-none d-sm-inline float-right"></span> -->
                           <!-- These two elements will be displayed inline only on very small devices -->
-                          <span class="h6 card-title text-white d-inline d-sm-none">VISITORS</span>
+                          <span class="h6 card-title text-white d-inline d-sm-none">List of visitors</span>
                           <!-- <span class="h6 date-time card-title text-white d-inline d-sm-none float-right" ></span> -->
                       </div>
                       <div class="card-body" id="card-body">
-                        <table class="table table-hover table-responsive" id="visitor-table">
-                            <thead>
-                              <tr class="bg-light text-dark">
+                        <table class="table table-hover table-responsive table-bordered" id="visitor-table">
+                            
+                            <thead class="thead-light">
+                              <tr class="text-dark">
                                 
-                                <th  class="h6 " scope="col" >Update</th>
                                 <th  class="h6 " scope="col" >First Name</th>
                                 <th  class="h6 " scope="col" >Last Name</th>
                                 <th  class="h6 " scope="col" >Phone</th>
@@ -86,6 +87,7 @@
                                 <th  class="h6 " scope="col" >Country Of Birth</th>
                                 <th  class="h6 " scope="col" >Clinical Info</th>
                                 <th  class="h6 " scope="col" >Key</th>
+                                <th  class="h6 " scope="col" >Update</th>
                               </tr>
                             </thead>
                             <!-- Visitors info goes here! -->
@@ -93,118 +95,35 @@
                             </tbody>
                             
                           </table>
+                                                      
                       </div>
-                      
+                      <nav aria-label="Table Page Navigation">
+                          <ul class="pagination justify-content-center pg-light">
+                            <li class="page-item">
+                              <a class="page-link" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link">1</a></li>
+                            <li class="page-item"><a class="page-link">2</a></li>
+                            <li class="page-item"><a class="page-link">3</a></li>
+                            <li class="page-item"><a class="page-link">4</a></li>
+                            <li class="page-item"><a class="page-link">5</a></li>
+                            <li class="page-item">
+                              <a class="page-link" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
                   </div>
+                  
               </div>
           </section>
     </div> 
-
-    <div class="container my-5"> 
-        <!-- Showcase component -->
-        <section id="section-overview" class="my-2">
-            <h5 class="display-5 text-center">Visitor Overview</h5>
-            <div class="row">
-                <div class="col-md-3 ">
-                     <div class="list-group ">
-                          <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-                          <a href="#" class="list-group-item list-group-item-action">Visitor Management</a>
-                          <a href="#" class="list-group-item list-group-item-action">Name</a>
-                          <a href="#" class="list-group-item list-group-item-action">Demographics</a>
-                          <a href="#" class="list-group-item list-group-item-action">Address</a>
-                          <a href="#" class="list-group-item list-group-item-action">Contact Details</a>
-                          <a href="#" class="list-group-item list-group-item-action">Appointments</a>
-                          <a href="#" class="list-group-item list-group-item-action">Clinical Info</a>
-                          <a href="#" class="list-group-item list-group-item-action">Additional Info</a>
-                          <a href="#" class="list-group-item list-group-item-action">History</a>
-                          
-                        </div> 
-                </div>
-                
-                <div class="col-md-9">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h6>Visitor Details</h6>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <form class="formData">
-                                          
-                                          <div class="form-group row">
-                                            <label id="firstName" for="firstName" class="col-4 col-form-label">First Name</label> 
-                                            <div class="col-8">
-                                              <input id="firstName" name="firstName"  class="form-control here" type="text">
-                                            </div>
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="lastName" class="col-4 col-form-label">Last Name</label> 
-                                            <div class="col-8">
-                                              <input id="lastName" name="lastName" class="form-control here" type="text">
-                                            </div>
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="phonet" class="col-4 col-form-label">Phone</label> 
-                                            <div class="col-8">
-                                              <input id="phone" name="phone"  class="form-control here" required="required" type="text">
-                                            </div>
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="reason" class="col-4 col-form-label">Reason for visit</label> 
-                                            <div class="col-8">
-                                              <select class="browser-default mt-3 bg-light rounded" name="reason" id="reason">
-                                                <option selected>Reason for your visit</option> 
-                                            </select>
-                                            </div>
-                                          </div>
-                                          <div class="form-group row">
-                                            <p class="form- grey-tex">Sex</p>
-                                            <div class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                                                <label class="custom-control-label" for="defaultInline1">1</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                                                <label class="custom-control-label" for="defaultInline1">1</label>
-                                            </div>
-                                            
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="timeIn" class="col-4 col-form-label">Time In</label> 
-                                            <div class="col-8">
-                                              <input id="timeIn" name="timeIn" class="form-control here" type="text">
-                                            </div>
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="status" class="col-4 col-form-label">Status</label> 
-                                            <div class="col-8">
-                                                <input id="status" name="status"  class="form-control here" type="text">
-                                            </div>
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="comments" class="col-4 col-form-label">Comments</label> 
-                                            <div class="col-8">
-                                              <input id="comments" name="comments" placeholder="Additional info" class="form-control here" type="text">
-                                            </div>
-                                          </div> 
-                                          <div class="form-group row">
-                                            <div class="offset-4 col-8">
-                                              <button name="submit" type="submit" class="btn btn-primary">Update Visitor</button>
-                                            </div>
-                                          </div>
-                                        </form>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-          </section> 
-        
-    </div>    
+  
 
         
     <footer class="bg-light">

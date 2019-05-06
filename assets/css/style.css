@@ -1,10 +1,61 @@
 
 body{
-    background:#eee    
+    margin: 0;
+    padding: 0;
+    background:#eee ;
+    width: 100%;
+    height: 100%; 
+    font-family: 'Open Sans', sans-serif;  
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Rubik', sans-serif;
 }
 
 .container {
-    max-width: 980px !important;
+    margin: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+#heading {
+    color: #0857b1;
+    text-shadow: 4px 4px 0px rgb(32, 32, 37), 5px 4px 0px rgba(0,0,0,0.15);
+    color: #0857b1;
+}
+
+#sign-in-section {
+    padding: 12% 0;
+}
+
+#dashboard {
+    border-radius: 25px !important;
+}
+
+table {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 500px;
+    table-layout: fixed !important;
+}
+#visitor-table tbody th {
+    width: 100px !important;
+}
+
+#visitor-table tr:hover{
+    cursor: pointer;
+}
+
+nav {
+    color: rgb(143, 139, 139) !important;
+    background-color: #ffffff !important;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+}
+
+.pagination li.active {
+    background-color:#ffffff !important;
 }
 
 .form-dark .font-small {
@@ -71,9 +122,6 @@ body{
   .form-dark .modal-header {
       border-bottom: none;
   }
-
-
-
 
 
 .modal-content {
@@ -163,39 +211,6 @@ body{
 }
 
 
-
-
- 
-/* .jumbotron {
-   height: 100%;
-   min-height: 100vh;
-   
-} */
-
-/* section {
-    padding-top: 4rem;
-} */
-
-#newsletter {
-    padding-top: 0;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family:'Rubik', sans-serif;
-}
-
-#heading {
-    color: #0857b1;
-    /* background: #FFFFFF; */
-    text-shadow: 4px 4px 0px rgb(32, 32, 37), 5px 4px 0px rgba(0,0,0,0.15);
-    color: #0857b1;
-    /* background: #FFFFFF; */
-}
-
 #frame {
     margin-top: 80px !important;
     padding-left: 0 !important;
@@ -210,22 +225,10 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
     max-width: 200px;
 }
-table {
-    width: 100%;
-    max-width: 1200px !important;
-    height: 500px;
-    table-layout: fixed !important;
-}
-#visitor-table tbody th {
-    width: 100px !important;
-}
 
-#visitor-table tr:hover{
-    cursor: pointer;
-  }
 
 #section-jumbotron {
-    padding-top:90px;
+    padding-top:10px;
     padding-bottom: 20px;
     height:700px;
 }
@@ -235,10 +238,6 @@ table {
     padding-top: 50px;
 }
 
-/* #section-about {
-    padding-top: 40px;
-    height: 700px;
-} */
 
 #section-visitors {
     padding-top:60px;

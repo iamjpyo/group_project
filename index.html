@@ -36,42 +36,42 @@
     
   <body>
     
-    <!-- Welcome Title-->
-    <div class="bg-primary fixed-top text-center">
+    <!-- Header Container-->
+    <header class="bg-primary fixed-top text-center" id="heading">
       <!-- All the navigation bar content goes here -->
         <h5 class="display-4 text-white pt-2"><i class="fas fa-file-medical-alt mr-2"></i>WELCOME</h5>
-    </div>
+    </header>
     
-
-    <!-- Jumbotron component -->
-    <section id="section-jumbotron" class="jumbotron jumbotron-fluid text-white">
-        <div class="container" id="jumbo_container">
-            <!--Grid row-->
-            <div class="row wow fadeIn">
-                    <!--Grid column-->
-                    <div class="col-md-12 text-center">
-                    <h1 class="display-4 font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInUp text-dark">Please Check In Here</h1>
-                    
-                    <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="row justify-content-center"></div>
-                            <div class="col-12 col-md-4 my-2 mx-2">
-                                <button type="button" class="btn btn-purple btn-lg btn-block rounded" data-toggle="modal" data-target="#modal-signin"><h5>Check In<i class="fas fa-sign-in-alt ml-2"></i></h5></button> 
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Sign In component -->
+        <section id="sign-in-section" >
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+                        <!--Grid column-->
+                        <div class="col-md-12 text-center">
+                        <h4 class="display-4 mb-0 pt-md-5 pt-5 wow fadeInUp text-dark">Please Check In Here</h4>
+                        
+                        <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="row justify-content-center"></div>
+                                <div class="col-12 col-md-4 my-2 mx-2">
+                                    <button type="button" class="btn btn-unique btn-lg btn-block rounded" data-toggle="modal" data-target="#modal-signin"><h5 class="py-2">Check In<i class="fas fa-sign-in-alt ml-2"></i></h5></button> 
+                                </div>
                             </div>
+                            <h5 class="pt-2 pb-2 wow fadeInUp text-info" data-wow-delay="0.2s">It comes
+                                    with a lot of new features, easy to follow who is on site. Check it out now!</h5>
+                            <a id="dashboard" class="btn btn-outline-unique btn-rounded"><i class="fas fa-book left"></i>Go to Dashboard</a>
                         </div>
-                        <h5 class="pt-2 pb-2 wow fadeInUp text-info" data-wow-delay="0.2s">It comes
-                                with a lot of new features, easy to follow who is on site. Check it out now!</h5>
-                        <a id="dashboard" class="btn btn-outline-purple btn-rounded"><i class="fas fa-book left"></i>Go to Dashboard</a>
-                    </div>
-                    </div>
-                    
-                    <!--Grid column-->
-            </div>
-            
-            <!--Grid row-->
-    </section>    
+                        </div>
+                        
+                        <!--Grid column-->
+                </div>
+                
+                <!--Grid row-->
+        </section>    
 
-    <!-- Modal -->
-          <div class="modal fade" id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <!-- Sign In Modal -->
+        <div class="modal fade" id="modal-signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
           aria-hidden="true">
           <div class="modal-dialog form-dark" role="document">
             <!--Content-->
@@ -146,17 +146,17 @@
           <!-- Modal -->
 
 
-             <!--Success Modal Templates-->
+          <!--Success Modal Templates-->
           <div id="modal-success" class="modal modal-message modal-success fade "  aria-hidden="true">
                    
           </div> 
 
            <!--Notification Modal Templates-->
-        <div id="modal-info" class="modal modal-message modal-info fade "  aria-hidden="true">
+           <div id="modal-info" class="modal modal-message modal-info fade "  aria-hidden="true">
                           
-        </div> 
+           </div> 
    
-    
+    </main>
 
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="assets/js/app.js"></script>
