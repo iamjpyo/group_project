@@ -60,45 +60,6 @@ function notificationModal() {
   $("#modal-info").modal('show');   
 };
 
-function getVisitorData(data) {
-  var visitors = data.val();
-  var keys = Object.keys(visitors);
-  console.log("Visitors: " + visitors);
-  console.log("Keys: " + keys);
-  for (var i = 0; i < keys.length; i++) {
-    var k = keys[i];
-    console.log("Key[" + i + "]: " + k );
-
-    var firstName = visitors[k].firstName;
-    var lastName = visitors[k].lastName;
-    var phone = visitors[k].phone;
-    var visitPurpose = visitors[k].visitPurpose;
-    
-    $(".formData").val("");
-    $('input[name="firstName"]').val(firstName);
-    $('input[name="lastName"]').val(lastName);
-    $('input[name="phone"]').val(phone);
-    $('select[name="reason"] option:selected').text(visitPurpose);   
-  };
-  
-};
-
-function updateClock() {
-  // var clock = moment().format("MM/DD/YY h:mm:ss a");
-  // $(".date-time").html(clock); 
-    // // Get current time in seconds
-    var currentTimeSec = moment();
-    console.log("Current Time in seconds:" + moment(currentTimeSec).format("ss"));
-    // if(moment(currentTimeSec).format("ss") == 00)
-    // {
-    //   // When current seconds=00
-    //     location.reload();     
-    // }
-};
-
-function errData(err) {
- console.log('Error: ' + err);
-};
 
 var jumbotron = $("#section-jumbotron");
 // var imageUrl = 'assets/images/image2.jpg';
@@ -120,7 +81,12 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
     var visitPurpose;
     var phone;
     var childKey;
- 
+    var $td2; 
+    var $td3; 
+    var $td4;
+    var $td5;
+    var $td8;
+    var $td10;
  
   
 
@@ -131,15 +97,7 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
 $(document).ready(function(){
   var time = moment().format("h:mm:ss a");
   var date = moment().format("DD/MM/YY");
-  // setInterval(updateClock, 1000);
-    //Enables scrolling of sections on the page
-    // $(function(){
-    //     var scroll = new SmoothScroll('a[href*="#section-"]');
-    // });
-
-    // Material Select Initialization
-    // $('.mdb-select').materialSelect();
-
+ 
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCmHmdKbE5Bo0Gu1kzo82FZ7Fbbv47AK7o",
@@ -181,7 +139,6 @@ $(document).ready(function(){
 
         // Creates local "temporary" object for holding the visitor data
         var visitor = {
-            // regNumber: regNumber,
             firstName: firstName,
             lastName: lastName,
             phone: phone,
@@ -193,11 +150,8 @@ $(document).ready(function(){
             status: status,
             countryBirth: countryBirth,
             healthInfo: healthInfo,  
-            // childkey: childkey,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         };
-
-        // console.log(visitor);
 
         //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
         database.ref().push(visitor);
@@ -207,15 +161,9 @@ $(document).ready(function(){
         //Clears the form
         $("form").trigger("reset");
 
-        // //Hides the modal-success after 2 seconds
-        // setTimeout(function() {
-            // $("#modal-success").modal('hide');
-        // }, 5000);
-
-        //Hides the modal-signin after 2 seconds
-        // setTimeout(function() {
-            $("#modal-signin").modal('hide');
-        // }, 1000);
+        //Hides the modal-signin
+        $("#modal-signin").modal('hide');
+        
         
       });
 
@@ -225,9 +173,7 @@ $(document).ready(function(){
           
         //Firebase watcher + initial loader. Store everything into a variable.
             visitor = childSnapshot.val();
-            console.log(visitor);
-
-            // regNumber = visitor.regNumber;
+                       
             firstName = visitor.firstName;
             lastName = visitor.lastName;
             phone = visitor.phone;
@@ -240,13 +186,10 @@ $(document).ready(function(){
             countryBirth = visitor.countryBirth;
             healthInfo= visitor.healthInfo;
             childkey = visitor.dateAdded;
-            // console.log(childkey); 
+            
           
             //Append new row to the table with the new train input
             var newRow = $("<tr class='clickableRow'>");
-            newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childkey + "'>Edit</button></td>"));
-            // newRow.attr("data-key", childKey);
-            // newRow.append($("<td>" + regNumber + "</td>"));
             newRow.append($("<td>" + firstName + "</td>"));
             newRow.append($("<td>" + lastName + "</td>"));
             newRow.append($("<td>" + phone + "</td>"));
@@ -259,6 +202,7 @@ $(document).ready(function(){
             newRow.append($("<td>" + countryBirth + "</td>"));
             newRow.append($("<td>" + healthInfo + "</td>"));
             newRow.append($("<td class='key'>" + childkey + "</td>"));
+            newRow.append($("<td class='text-center'><button class='edit btn btn-danger btn-xs' data-key='" + childkey + "'><i class='far fa-edit'></i>Edit</button></td>"));
             
           
           $("#add-row").append(newRow);
@@ -269,6 +213,7 @@ $(document).ready(function(){
 
 });  
 
+
 $(document.body).on("click", "tr", ".clickable", function(event){
   
   //Edit rows
@@ -276,33 +221,36 @@ $(document.body).on("click", "tr", ".clickable", function(event){
   var ref = database.ref();
   var $thisRow = $(this).closest("tr");       // Finds the closest row <tr> 
   var $tds = $thisRow.find("td");             // Finds all children <td> elements
-    
+       $td1 = $thisRow.find("td:nth-child(1)").text(); 
+       $td2 = $thisRow.find("td:nth-child(2)").text(); 
+       $td3 = $thisRow.find("td:nth-child(3)").text();
+       $td4 = $thisRow.find("td:nth-child(4)").text();
+       $td7 = $thisRow.find("td:nth-child(7)").text();
+       $td9 = $thisRow.find("td:nth-child(9)").text();
   
+    // Clear sessionStorage
+    sessionStorage.clear();
 
-    $('input[name="firstName"]').val($thisRow.find("td:nth-child(2)").text());  
-    $('input[name="lastName"]').val($thisRow.find("td:nth-child(3)").text());
-    $('input[name="phone"]').val($thisRow.find("td:nth-child(4)").text());
-    $('select[name="reason"] option:selected').text($thisRow.find("td:nth-child(5)").text()); 
-    $('input[name="timeIn"]').val($thisRow.find("td:nth-child(8)").text()); 
-    $('input[name="status"]').val($thisRow.find("td:nth-child(10)").text());
-    
-  // var index = 0;
-  // $.each($tds, function(index) {  
-  //   index             // Visits every single <td> element
-  //   console.log($(this).text());        // Prints out the text within the <td>
-  // });
-
-  // var thisRowKey = $(this).find('.key').text();
-  // var thisRow = $("tr.clickableRow").html();
-  // console.log(thisRow);
-  // console.log(thisRowKey);
+    // Store all content into sessionStorage
+    sessionStorage.setItem("firstName", $td1);
+    sessionStorage.setItem("lastName", $td2);
+    sessionStorage.setItem("phone", $td3);
+    sessionStorage.setItem("reason", $td4);
+    sessionStorage.setItem("timeIn", $td7);
+    sessionStorage.setItem("status", $td9);
    
-  //  console.log("Reference: " + ref);
-  //  ref.once("value", getVisitorData, errData);
-
+   //Redirect to page overview.html    
+    window.location.href = "overview.html";
+    
 
 }); 
 
-
+// By default display the content from sessionStorage
+$('input[name="firstName-display"]').val(sessionStorage.getItem("firstName"));
+$('input[name="lastName-display"]').val(sessionStorage.getItem("lastName"));
+$('input[name="phone-display"]').val(sessionStorage.getItem("phone"));
+$('select[name="reason-display"] option:selected').text(sessionStorage.getItem("reason"));
+$('input[name="timeIn-display"]').val(sessionStorage.getItem("timeIn"));
+$('input[name="status-display"]').val(sessionStorage.getItem("status"));
      
 

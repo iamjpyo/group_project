@@ -57,84 +57,77 @@
     <div class="container my-5"> 
         <!-- Showcase component -->
         <section id="section-overview" class="my-2">
-            <h5 class="display-5 text-center">Visitor Overview</h5>
+            <!-- <h5 class="display-5 text-center">Visitor Overview</h5> -->
             <div class="row">
                 <div class="col-md-3 ">
-                     <div class="list-group ">
-                          <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-                          <a href="#" class="list-group-item list-group-item-action">Visitor Management</a>
-                          <a href="#" class="list-group-item list-group-item-action">Name</a>
-                          <a href="#" class="list-group-item list-group-item-action">Demographics</a>
-                          <a href="#" class="list-group-item list-group-item-action">Address</a>
-                          <a href="#" class="list-group-item list-group-item-action">Contact Details</a>
-                          <a href="#" class="list-group-item list-group-item-action">Appointments</a>
-                          <a href="#" class="list-group-item list-group-item-action">Clinical Info</a>
-                          <a href="#" class="list-group-item list-group-item-action">Additional Info</a>
-                          <a href="#" class="list-group-item list-group-item-action">History</a>
-                          
-                        </div> 
+                  <div class="card card-info">
+                    <div class="card-body p-0">
+                      <div class="list-group">
+                            <h5 class="display-5 mt-0 card-title bg-info text-white list-group-item list-group-item-action">Visitor Overview</h5>
+                            <a href="#" class="list-group-item list-group-item-action active">Visitor Basic Info</a>
+                            <a href="#" class="list-group-item list-group-item-action">Demographics</a>
+                            <a href="#" class="list-group-item list-group-item-action">Address</a>
+                            <a href="#" class="list-group-item list-group-item-action">Contact Details</a>
+                            <a href="#" class="list-group-item list-group-item-action">Appointments</a>
+                            <a href="#" class="list-group-item list-group-item-action">Clinical Info</a>
+                            <a href="#" class="list-group-item list-group-item-action">Additional Info</a>
+                            <a href="#" class="list-group-item list-group-item-action">History</a>      
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h6>Visitor Details</h6>
+                                    <h6>Visitor Basic Info</h6>
                                     <hr>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form class="formData">
+                                    
+                                    <form class="formData" method="GET">
                                           
                                           <div class="form-group row">
-                                            <label id="firstName" for="firstName" class="col-4 col-form-label">First Name</label> 
+                                            <label id="firstName-display" for="firstName-display" class="col-4 col-form-label">First Name</label> 
                                             <div class="col-8">
-                                              <input id="firstName" name="firstName"  class="form-control here" type="text">
+                                              <input id="firstName-display" name="firstName-display"  class="form-control here" type="text" >
                                             </div>
                                           </div>
                                           <div class="form-group row">
-                                            <label for="lastName" class="col-4 col-form-label">Last Name</label> 
+                                            <label for="lastName-display" class="col-4 col-form-label">Last Name</label> 
                                             <div class="col-8">
-                                              <input id="lastName" name="lastName" class="form-control here" type="text">
+                                              <input id="lastName-display" name="lastName-display" class="form-control here" type="text">
                                             </div>
                                           </div>
                                           <div class="form-group row">
-                                            <label for="phonet" class="col-4 col-form-label">Phone</label> 
+                                            <label for="phone-display" class="col-4 col-form-label">Phone</label> 
                                             <div class="col-8">
-                                              <input id="phone" name="phone"  class="form-control here" required="required" type="text">
+                                              <input id="phone-display" name="phone-display"  class="form-control here" required="required" type="text">
                                             </div>
                                           </div>
                                           <div class="form-group row">
-                                            <label for="reason" class="col-4 col-form-label">Reason for visit</label> 
+                                            <label for="reason-display" class="col-4 col-form-label">Reason for visit</label> 
                                             <div class="col-8">
-                                              <select class="browser-default mt-3 bg-light rounded" name="reason" id="reason">
+                                              <select class="browser-default mt-3 bg-light rounded" name="reason-display" id="reason-display">
                                                 <option selected>Reason for your visit</option> 
                                             </select>
                                             </div>
                                           </div>
+                                          
                                           <div class="form-group row">
-                                            <p class="form- grey-tex">Sex</p>
-                                            <div class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                                                <label class="custom-control-label" for="defaultInline1">1</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                                                <label class="custom-control-label" for="defaultInline1">1</label>
-                                            </div>
-                                            
-                                          </div>
-                                          <div class="form-group row">
-                                            <label for="website" class="col-4 col-form-label">Website</label> 
+                                            <label for="timeIn-display" class="col-4 col-form-label">Time In</label> 
                                             <div class="col-8">
-                                              <input id="website" name="website" placeholder="website" class="form-control here" type="text">
+                                              <input id="timeIn-display" name="timeIn-display" class="form-control here" type="text">
                                             </div>
                                           </div>
                                           <div class="form-group row">
-                                            <label for="healthinfo" class="col-4 col-form-label">Health Info</label> 
+                                            <label for="status-display" class="col-4 col-form-label">Status</label> 
                                             <div class="col-8">
-                                              <textarea id="healthinfo" name="healthinfo" cols="40" rows="4" class="form-control"></textarea>
+                                                <input id="status-display" name="status-display"  class="form-control here" type="text">
                                             </div>
                                           </div>
                                           <div class="form-group row">
@@ -145,7 +138,7 @@
                                           </div> 
                                           <div class="form-group row">
                                             <div class="offset-4 col-8">
-                                              <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                              <button name="submit" type="submit" class="btn btn-primary">Update Visitor</button>
                                             </div>
                                           </div>
                                         </form>
@@ -158,6 +151,7 @@
           </section> 
         
     </div>    
+
    
         
     <footer class="bg-light">
