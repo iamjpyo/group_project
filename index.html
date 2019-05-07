@@ -86,32 +86,35 @@
                   </button>
                 </div>
                 <!--Body-->
-                <form>
+                <form id="signinForm" class="needs-validation" novalidate>
                     <div class="modal-body">
                       <!--Body-->
                         <div class="row">
                           
                             <div class="col-12 col-md-6 md-form mb-5">
                                 <i class="fas fa-user prefix pr-2"></i>
-                                <input type="text" id="first_name" class="form-control validate white-text">
-                                <label class="pl-3" data-error="wrong" data-success="right" for="first_name">First Name</label>
+                                <input type="text" id="first_name" class="form-control validate white-text" required>
+                                <label class="control-label pl-3" data-error="wrong" data-success="right" for="first_name">First Name</label>
+                                
                             </div>
                             <div class="col-12 col-md-6 md-form mb-5">
-                                <input type="text" id="last_name" class="form-control validate white-text">
-                                <label class="pl-3" data-error="wrong" data-success="right" for="last_name">Last Name</label>
+                                <input type="text" id="last_name" class="form-control validate white-text" required>
+                                <label class="control-label pl-3" data-error="wrong" data-success="right" for="last_name">Last Name</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12 col-md-6 md-form mb-5">
                                 <i class="fas fa-phone prefix pr-2"></i>
-                                <input type="text" id="phone" class="form-control validate white-text">
-                                <label class="pl-3" data-error="wrong" data-success="right" for="phone">Phone</label>
+                                <input type="text" id="phone" class="form-control validate white-text" required>
+                                <label class="control-label pl-3" data-error="wrong" data-success="right" for="phone">Phone</label>
+                                
                             </div>
                             <div class="col-12 col-md-6 md-form mb-5">
-                                <select class="browser-default mt-3 bg-light rounded" id="reason">
-                                    <option selected>Reason for your visit</option>
-                                    <option value="New Patient">New Patient</option>
+                                <label>Subject</label>
+                                <select class="browser-default custom-select mt-3 bg-light rounded" id="reason"  data-error="wrong" data-success="right"required>
+                                    <option <option value="" disabled>Reason for your visit</option>
+                                    <option value="New Patient" selected>New Patient</option>
                                     <option value="Follow Up">Follow Up</option>
                                     <option value="Sick Visit">Sick Visit</option>
                                 </select>
@@ -119,9 +122,10 @@
                         </div>  
 
                         <div class="form-group mt-4">
-                          <input class="form-check-input" type="checkbox" id="checkbox624">
-                          <label for="checkbox624" class="white-text form-check-label">Accept the<a href="#" class="green-text font-weight-bold">
+                          <input class="form-check-input" type="checkbox" id="invalidCheck" required>
+                          <label for="invalidCheck" class="white-text form-check-label">Accept the<a href="#" class="green-text font-weight-bold">
                               Terms and Conditions</a></label>
+                              
                         </div>
                     </div>
 
@@ -147,9 +151,42 @@
 
 
           <!--Success Modal Templates-->
-          <div id="modal-success" class="modal modal-message modal-success fade "  aria-hidden="true">
-                   
-          </div> 
+          <!-- <div id="modal-success" class="modal modal-message modal-success fade "  aria-hidden="true"> -->
+            <!-- Central Modal Medium Success -->
+              <div id="modal-success"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                  <!--Header-->
+                  <div class="modal-header d-flex justify-content-center">
+                    <!-- <p class="heading lead">Modal Success</p> -->
+
+                    <!-- <button type="button" class="close  float-right" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="white-text">&times;</span>
+                    </button> -->
+                  </div>
+
+                  <!--Body-->
+                  <div class="modal-body">
+                    <div class="text-center">
+                      <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                      <h5 class="lead py-2">You have been successfully signed in.</h5>
+                      <p class="text-secondary">Please take a seat and you will be called shortly!</p>
+                    </div>
+                  </div>
+
+                  <!--Footer-->
+                  <div class="modal-footer justify-content-center">
+                    <!-- <a type="button" class="btn btn-success">Close<i class="far fa-gem ml-1 text-white"></i></a> -->
+                    <a type="button" class="btn btn-success waves-effect" data-dismiss="modal">Close</a>
+                  </div>
+                </div>
+                <!--/.Content-->
+              </div>
+              </div>
+              <!-- Central Modal Medium Success-->
+                                
+          <!-- </div>  -->
 
            <!--Notification Modal Templates-->
            <div id="modal-info" class="modal modal-message modal-info fade "  aria-hidden="true">

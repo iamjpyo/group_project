@@ -10,28 +10,35 @@ function setBackgroundImage(myObject, imageUrl) {
                });
 };
 
-function showThankYouModal() {
-  
-    var modal_dialog = $('<div class="modal-dialog bg-light border border-success text-dark p-2 text-center" style="width:450px;"></div>');
-    var modal_content = $(' <div class="modal-content"></div>');
-    var modal_header = $('<h4 class="modal-title">Thank You, ' + firstName + '!</h4>');
-    var button_close = $('<button type="button" class="close" data-dismiss="modal">&times;</button>');
-    var modal_body = $('<div class="modal-body"></div>');
-    var p_lead = $('<p class="lead">You have been successfully signed in.</p>');
-    var p_secondary = $('<p class="text-secondary"><small>Please take a seat and you will be called shortly!</small></p>');
-    var modal_footer = $('<div class="modal-footer"></div>');
-    var button_success = $('<button type="button" class="btn btn-success float-right" data-dismiss="modal">Close</button>');
 
-    modal_dialog.append(modal_content);
-    modal_dialog.append(modal_header);
-    modal_dialog.append(button_close);
-    modal_dialog.append(modal_body);
-    modal_dialog.append(p_lead);
-    modal_dialog.append(p_secondary);
-    modal_dialog.append(button_success);
-    modal_dialog.append(modal_footer);
+
+function showThankYouModal() {
+    // var modal = $('<div id="modal-success"  class="modal  modal-success fade bg-secondary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>');
+    // var modal_dialog = $('<div class="modal-dialog modal-notify" role="document"></div>');
+    // var modal_content = $(' <div class="modal-content"></div>');
+    var modal_header = $('<h2 class="modal-title text-center">Thank You, ' + firstName + '!</h2>');
+    // var button_close = $('<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>');
+    // var span = $('<span aria-hidden="true" class="white-text">&times;</span>');
+    // var modal_body = $('<div class="modal-body text-center"></div>');
+    // var icon = $('<i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>');
+    // var p_lead = $('<p class="lead">You have been successfully signed in.</p>');
+    // var p_secondary = $('<p class="text-secondary"><small>Please take a seat and you will be called shortly!</small></p>');
+    // var modal_footer = $('<div class="modal-footer justify-content-center"></div>');
+    // var button_success = $('<button type="button" class="btn btn-success float-right" data-dismiss="modal">Close</button>');
+
+    // modal.append(modal_dialog);
+    // modal_dialog.append(modal_content);
+    $(".modal-header").append(modal_header);
+    // modal_dialog.append(button_close);
+    // modal_dialog.append(span);
+    // modal_dialog.append(modal_body);
+    // modal_dialog.append(icon);
+    // modal_dialog.append(p_lead);
+    // modal_dialog.append(p_secondary);
+    // modal_dialog.append(button_success);
+    // modal_dialog.append(modal_footer);
     
-    $("#modal-success").html(modal_dialog);
+    // $("#modal-success").html(modal_dialog);
     $("#modal-success").modal('show');   
 };
 
@@ -81,13 +88,7 @@ var imageUrl = 'https://mdbootstrap.com/img/Photos/Others/background.jpg'
     var visitPurpose;
     var phone;
     var childKey;
-    var $td2; 
-    var $td3; 
-    var $td4;
-    var $td5;
-    var $td8;
-    var $td10;
- 
+    
   
 
 // MAIN PROCESS
@@ -116,12 +117,15 @@ $(document).ready(function(){
       $("#dashboard").on("click", function(){
         window.location.href = "start.html";
       });
-
+      
+     
+      
       // Capture checkin Button Click
       $("#checkin-btn").on("click", function(event) {
         // Prevent the page from refreshing
         event.preventDefault();
-
+                
+       
         // Grabbed values from the form
         firstName = $("#first_name").val().trim();
         lastName = $("#last_name").val().trim();
@@ -156,14 +160,15 @@ $(document).ready(function(){
         //Pushes new visitor data to the database and auto-generates a unique key (childKey) every time a new child is added 
         database.ref().push(visitor);
         showThankYouModal();
-        notificationModal();     
+        // notificationModal();     
+       
           
         //Clears the form
         $("form").trigger("reset");
 
         //Hides the modal-signin
         $("#modal-signin").modal('hide');
-        
+        $("#modal-success").modal('show');
         
       });
 
@@ -221,13 +226,14 @@ $(document.body).on("click", "tr", ".clickable", function(event){
   var ref = database.ref();
   var $thisRow = $(this).closest("tr");       // Finds the closest row <tr> 
   var $tds = $thisRow.find("td");             // Finds all children <td> elements
-       $td1 = $thisRow.find("td:nth-child(1)").text(); 
-       $td2 = $thisRow.find("td:nth-child(2)").text(); 
-       $td3 = $thisRow.find("td:nth-child(3)").text();
-       $td4 = $thisRow.find("td:nth-child(4)").text();
-       $td7 = $thisRow.find("td:nth-child(7)").text();
-       $td9 = $thisRow.find("td:nth-child(9)").text();
-  
+  //Finds the specified children <td> elements and stores their text contents to variables
+  var $td1 = $thisRow.find("td:nth-child(1)").text(); 
+  var $td2 = $thisRow.find("td:nth-child(2)").text(); 
+  var $td3 = $thisRow.find("td:nth-child(3)").text();
+  var $td4 = $thisRow.find("td:nth-child(4)").text();
+  var $td7 = $thisRow.find("td:nth-child(7)").text();
+  var $td9 = $thisRow.find("td:nth-child(9)").text();
+
     // Clear sessionStorage
     sessionStorage.clear();
 
